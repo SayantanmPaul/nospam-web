@@ -1,8 +1,10 @@
+import defaultstyles from '@/styles/defaultstyles';
+import Image from 'next/image';
 const navbar = () => {
   return (
-    <div>
-      <h1>Hii</h1>
-    </div>
+    <nav>
+      <div>Hii</div>
+    </nav>
   );
 };
 export default navbar;
