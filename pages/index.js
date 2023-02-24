@@ -4,6 +4,7 @@ import Hero from '@/components/hero';
 import Navbar from '@/components/navbar';
 import Specialiy from '@/components/speciality';
 import Tutorial from '@/components/tutorial';
+import Styles from '../styles/defaultstyles';
 
 import Head from 'next/head';
 
@@ -16,8 +17,10 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Navbar />
+      <div className={`${Styles.pxpadding}`}>
+        <div className="pt-5 ">
+          <Navbar />
+        </div>
         <Hero />
         <Tutorial />
         <Specialiy />
