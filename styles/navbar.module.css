@@ -27,6 +27,19 @@
     margin-top: 40px;
   }
 }
-.text2 {
+
+/* mobile menu design */
+.mobilemenutext {
   font-family: 'Bebas Neue', cursive;
+}
+.mobilemenutext {
+  display: inline-block;
+  position: relative;
+}
+.logintext {
+  font-family: 'Oswald', sans-serif;
+}
+
+.avatartext {
+  font-family: 'Caveat', cursive;
 }
