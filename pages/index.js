@@ -17,11 +17,18 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={`${Styles.pxpadding}`}>
-        <div className="pt-5 ">
+      <div className={`${Styles.pxpadding} lg:px-28 px-6 `}>
+        <div className="pt-5">
           <Navbar />
         </div>
-        <Hero />
+        <div
+          className="bg-repeat"
+          style={{ backgroundImage: 'url(https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png)' }}
+        >
+          <div className=" my-11 lg:my-0">
+            <Hero />
+          </div>
+        </div>
         <Tutorial />
         <Specialiy />
         <Getstarted />

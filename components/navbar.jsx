@@ -45,8 +45,8 @@ const navbar = () => {
   return (
     <nav className="left-0 top-0  ease-in duration-300 ">
       <div className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] ">
-        <button className=" object-contain lg:h-[40px] h-8 w-auto ">
-          <Image src={NoSpam} alt="Logo" width={149} height={40} />
+        <button className=" object-contain h-auto w-40 ">
+          <Image src={NoSpam} alt="Logo" width={149} />
         </button>
 
         {/* desktop view */}
@@ -87,7 +87,7 @@ const navbar = () => {
 
         {/* mobile and tablet view */}
         <button onClick={handleNav}>
-          <div className=" mt-3 lg:hidden block">
+          <div className=" lg:hidden block">
             {nav ? <BiDotsHorizontalRounded size={24} color="#256D85" /> : <CgMenuRight size={24} color="#256D85" />}
           </div>
         </button>
