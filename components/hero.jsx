@@ -16,7 +16,7 @@ const hero = () => {
       >
         <div className=" lg:max-w-[500px] w-full flex flex-col gap-8 ">
           <motion.h1
-            variants={textVariant(1.1)}
+            variants={textVariant(1.3)}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" capitalize lg:text-[55px] lg:leading-[80px] leading-[47px] md:text-5xl text-[40px] font-medium text-[#2D7D90] "
           >
@@ -50,7 +50,7 @@ const hero = () => {
           </motion.button>
         </div>
         <motion.div
-          variants={fadeIn('up', 'tween', 1.3, 1)}
+          variants={fadeIn('up', 'tween', 1.1, 1)}
           className="object-contain md:w-[70%] w-[90%] h-auto flex justify-center"
         >
           <Image src={VectorCheck} alt="vectorimg" width={586} priority={true} />

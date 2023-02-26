@@ -7,6 +7,8 @@ import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import { FaAngleRight } from 'react-icons/fa';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { RxDotFilled } from 'react-icons/rx';
+import { motion } from 'framer-motion';
+import { navVariants } from '@/Utilities/motions';
 
 const navbar = () => {
   // avatar images
@@ -43,7 +45,13 @@ const navbar = () => {
     setnav(!nav);
   };
   return (
-    <nav className="left-0 top-0  ease-in duration-300 ">
+    <motion.nav
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="left-0 top-0 "
+    >
       <div className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] ">
         <button className=" object-contain h-auto w-40 ">
           <Image src={NoSpam} alt="Logo" width={149} />
@@ -162,7 +170,7 @@ const navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 export default navbar;
