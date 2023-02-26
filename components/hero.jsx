@@ -1,25 +1,36 @@
+import { textVariant, staggerContainer, fadeIn } from '@/Utilities/motions';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import VectorCheck from '../public/firstvector.png';
+
 const hero = () => {
   return (
     <div className="flex justify-center">
-      <div className="flex max-w-[1240px] items-center lg:flex-row flex-col lg:gap-14 overflow-hidden ">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex max-w-[1240px] items-center lg:flex-row flex-col lg:gap-14 overflow-hidden "
+      >
         <div className=" lg:max-w-[500px] w-full flex flex-col gap-8 ">
-          <h1
+          <motion.h1
+            variants={textVariant(1.1)}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" capitalize lg:text-[55px] lg:leading-[80px] leading-[47px] md:text-5xl text-[40px] font-medium text-[#2D7D90] "
           >
             Determine whether the comments are spam or not!
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+            variants={textVariant(1.5)}
             style={{ fontFamily: 'Roboto' }}
             className="font-medium lg:text-lg md:text-lg text-sm leading-6  text-[#00AA95]"
           >
             A project designed to detection of spam comments by quickly and accurately identifying irrelevant,
             inappropriate, and promotional messages.
-          </p>
-          <button className="flex justify-start">
+          </motion.p>
+          <motion.button variants={textVariant(1.7)} className="flex justify-start">
             <a
               href="#_"
               className="inline-flex items-center font-medium justify-center px-6 py-2 mb-2 text-lg text-white bg-[#256D85] rounded-3xl hover:bg-[#00CC76] sm:w-auto sm:mb-0 duration-500 "
@@ -36,12 +47,15 @@ const hero = () => {
                 ></path>
               </svg>
             </a>
-          </button>
+          </motion.button>
         </div>
-        <div className="object-contain md:w-[70%] w-[90%] h-auto flex justify-center">
+        <motion.div
+          variants={fadeIn('up', 'tween', 1.3, 1)}
+          className="object-contain md:w-[70%] w-[90%] h-auto flex justify-center"
+        >
           <Image src={VectorCheck} alt="vectorimg" width={586} priority={true} />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
