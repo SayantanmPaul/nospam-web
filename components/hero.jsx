@@ -11,12 +11,13 @@ const hero = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="flex max-w-[1240px] items-center lg:flex-row flex-col lg:gap-14 overflow-hidden "
       >
         <div className=" lg:max-w-[500px] w-full flex flex-col gap-8 ">
           <motion.h1
             variants={textVariant(1.5)}
+            viewport={{ once: 'false' }}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" capitalize lg:text-[55px] lg:leading-[80px] leading-[47px] md:text-5xl text-[40px] font-medium text-[#2D7D90] "
           >
@@ -24,6 +25,7 @@ const hero = () => {
           </motion.h1>
           <motion.p
             variants={textVariant(1.7)}
+            viewport={{ once: 'false' }}
             style={{ fontFamily: 'Roboto' }}
             className="font-medium lg:text-lg md:text-lg text-sm leading-6  text-[#00AA95]"
           >

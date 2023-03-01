@@ -49,7 +49,7 @@ const navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: 'false' }}
       className="left-0 top-0 "
     >
       <div className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] ">
