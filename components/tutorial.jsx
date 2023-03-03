@@ -4,6 +4,7 @@ import { HiChevronRight } from 'react-icons/hi';
 import { HiChevronDoubleRight } from 'react-icons/hi';
 import { staggerContainer, fadeIn, ImageVarients, zoomIn } from '@/Utilities/motions';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const tutorial = () => {
   return (
@@ -12,7 +13,7 @@ const tutorial = () => {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: 'false ', amount: 0.25 }}
+        viewport={{ once: 'false ' }}
         className="flex max-w-[1240px] items-center lg:flex-row flex-col-reverse lg:gap-28 gap-8 overflow-hidden"
       >
         <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} className="flex justify-center">
@@ -43,15 +44,17 @@ const tutorial = () => {
             </button>
           </motion.div>
           <motion.div variants={fadeIn('up', 'tween', 0.4, 1)} className="flex justify-start">
-            <button className=" px-4 py-2  rounded-full flex items-center justify-center flex-row bg-[#1d5567] hover:bg-[#003049] duration-500 text-white hover:gap-2 ">
-              <a
-                style={{ fontFamily: 'Sarabun, sans-serif' }}
-                className="uppercase text-sm font-medium leading-4 pb-[2px] "
-              >
-                I can find out BY myself
-              </a>
-              <HiChevronDoubleRight size={18} />
-            </button>
+            <Link href={'./login'} as="Login">
+              <button className=" px-4 py-2  rounded-full flex items-center justify-center flex-row bg-[#1d5567] hover:bg-[#003049] duration-500 text-white hover:gap-2 ">
+                <p
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="uppercase text-sm font-medium leading-4 pb-[2px] "
+                >
+                  I can find out BY myself
+                </p>
+                <HiChevronDoubleRight size={18} />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>

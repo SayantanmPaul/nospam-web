@@ -32,24 +32,30 @@ const hero = () => {
             A project designed to detection of spam comments by quickly and accurately identifying irrelevant,
             inappropriate, and promotional messages.
           </motion.p>
-          <motion.button variants={textVariant(1.8)} className="flex justify-start">
-            <a
-              href="#_"
-              className="inline-flex items-center font-medium justify-center px-6 py-2 mb-2 text-lg text-white bg-[#256D85] rounded-3xl hover:bg-[#00CC76] sm:w-auto sm:mb-0 duration-500 "
-              data-primary="green-400"
-              data-rounded="rounded-2xl"
-              data-primary-reset="{}"
-            >
-              Get Started
-              <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </motion.button>
+          <Link href={'./login'} as="Login">
+            <motion.button variants={textVariant(1.8)} className="flex justify-start">
+              <p
+                className="inline-flex items-center font-medium justify-center px-6 py-2 mb-2 text-lg text-white bg-[#256D85] rounded-3xl hover:bg-[#00CC76] sm:w-auto sm:mb-0 duration-500 "
+                data-primary="green-400"
+                data-rounded="rounded-2xl"
+                data-primary-reset="{}"
+              >
+                Get Started
+                <svg
+                  className="w-4 h-4 ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </p>
+            </motion.button>
+          </Link>
         </div>
         <motion.div
           variants={fadeIn('up', 'tween', 1.3, 1)}

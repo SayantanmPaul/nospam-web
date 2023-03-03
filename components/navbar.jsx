@@ -9,6 +9,7 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import { RxDotFilled } from 'react-icons/rx';
 import { motion } from 'framer-motion';
 import { navVariants } from '@/Utilities/motions';
+import Link from 'next/link';
 
 const navbar = () => {
   // avatar images
@@ -83,14 +84,15 @@ const navbar = () => {
           >
             Contact Us
           </a>
-          <button>
-            <a
-              href="#"
-              className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white hover:bg-[#003049] py-[6px] pt-1 px-6 rounded-3xl duration-300 `}
-            >
-              Login/SignUp
-            </a>
-          </button>
+          <Link href={'/login'} as="LogIn">
+            <button>
+              <p
+                className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white hover:bg-[#003049] py-[6px] pt-1 px-6 rounded-3xl duration-300 `}
+              >
+                Login/SignUp
+              </p>
+            </button>
+          </Link>
         </div>
 
         {/* mobile and tablet view */}
@@ -162,10 +164,12 @@ const navbar = () => {
               <a href="#">Contact Us</a>
             </li>
             <div className=" flex flex-col pt-[20%] items-center">
-              <div className="flex flex-row items-center justify-center w-40 md:w-44 pb-1 md:pb- bg-white border-2 border-[#0D4C92]  rounded-full cursor-pointer  border-green hover:bg-[#0D4C92] text-[#0D4C92] hover:text-white duration-300 ">
-                <button className={`${FontStyles.logintext} text-xl md:text-2xl p-1  `}>LogIn/SignUp</button>
-                <FaAngleRight size={22} className="pt-1" />
-              </div>
+              <Link href={'/login'} as="LogIn">
+                <div className="flex flex-row items-center justify-center w-40 md:w-44 pb-1 md:pb- bg-white border-2 border-[#0D4C92]  rounded-full cursor-pointer  border-green hover:bg-[#0D4C92] text-[#0D4C92] hover:text-white duration-300 ">
+                  <button className={`${FontStyles.logintext} text-xl md:text-2xl p-1  `}>LogIn/SignUp</button>
+                  <FaAngleRight size={22} className="pt-1" />
+                </div>
+              </Link>
             </div>
           </ul>
         </div>

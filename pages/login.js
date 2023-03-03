@@ -79,11 +79,11 @@ const Login = () => {
           </div>
         </form>
         {/* bottom */}
-        <div className="flex flex-row justify-center ">
+        <div className="flex flex-row justify-center gap-1 ">
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
-            dont have a account yet?
+            don&#39;t have a account yet?
           </p>
-          <Link href={'/register'} as="image">
+          <Link href={'/register'} as="Register">
             <p style={{ fontFamily: 'Poppins, sans-serif' }} className=" text-blue-700 underline text-xs">
               Sign Up
             </p>
