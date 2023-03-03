@@ -17,7 +17,7 @@ const Login = () => {
       </Head>
       <section className=" mx-auto flex  flex-col gap-7  ">
         {/* tiitle */}
-        <div className="title justify-center flex py-5">
+        <div className="title justify-center flex ">
           <Image src={Logo} alt="NoSpam" width={140} priority="true" />
         </div>
 
@@ -79,7 +79,7 @@ const Login = () => {
           </div>
         </form>
         {/* bottom */}
-        <div className="flex flex-row justify-center pb-5">
+        <div className="flex flex-row justify-center ">
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
             dont have a account yet?
           </p>
