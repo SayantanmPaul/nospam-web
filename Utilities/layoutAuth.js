@@ -14,7 +14,7 @@ export default function Layout({ children }) {
       style={{ backgroundImage: 'url(/background-blue.jpg)' }}
       className="flex h-screen bg-cover bg-center overflow-hidden  "
     >
-      <div className="m-auto bg-slate-50 rounded-lg lg:w-3/5 w-[85%] h-5/7 grid lg:grid-cols-2 ">
+      <div className="m-auto bg-slate-50 rounded-lg lg:w-3/5 md:w-3/5 w-[85%] h-5/7 grid lg:grid-cols-2 overflow-hidden ">
         <div className=" hidden lg:block">
           <Swiper
             spaceBetween={1}
