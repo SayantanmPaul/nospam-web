@@ -8,13 +8,13 @@ import Gihub from '../public/github.png';
 import { HiAtSymbol, HiFingerPrint } from 'react-icons/hi';
 import styles from '../styles/form.module.css';
 import { useState } from 'react';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 const Login = () => {
   const [show, setShow] = useState(false);
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'http://localhost:3000/' });
+    signIn('google', { callbackUrl: 'http://127.0.0.1:5000/' });
   }
   return (
     <Layout>
