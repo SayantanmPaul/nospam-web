@@ -8,8 +8,14 @@ import Gihub from '../public/github.png';
 import { HiAtSymbol, HiFingerPrint } from 'react-icons/hi';
 import styles from '../styles/form.module.css';
 import { useState } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 const Login = () => {
   const [show, setShow] = useState(false);
+
+  // google handler function
+  async function handleGoogleSignIn() {
+    signIn('google', { callbackUrl: 'http://localhost:3000/' });
+  }
   return (
     <Layout>
       <Head>
@@ -55,9 +61,9 @@ const Login = () => {
                hover:from-blue-800 hover:to-purple-800 duration-300 "
               type="submit"
             >
-              <a style={{ fontFamily: 'Poppins, sans-serif' }} className="text-sm">
+              <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-sm">
                 LogIn
-              </a>
+              </p>
             </button>
           </div>
           <div className="grid grid-cols-3 items-center justify-center">
@@ -67,7 +73,12 @@ const Login = () => {
           </div>
           <div className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  ">
             <Image src={Google} alt="google" width={25} />
-            <button style={{ fontFamily: 'Poppins, sans-serif' }} type="submit" className="text-sm">
+            <button
+              onClick={handleGoogleSignIn}
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+              type="submit"
+              className="text-sm"
+            >
               Sigin with Google
             </button>
           </div>

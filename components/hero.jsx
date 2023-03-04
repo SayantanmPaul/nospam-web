@@ -32,7 +32,7 @@ const hero = () => {
             A project designed to detection of spam comments by quickly and accurately identifying irrelevant,
             inappropriate, and promotional messages.
           </motion.p>
-          <Link href={'./login'} as="Login">
+          <Link rel="preload" href={'./login'} as="Login">
             <motion.button variants={textVariant(1.8)} className="flex justify-start">
               <p
                 className="inline-flex items-center font-medium justify-center px-6 py-2 mb-2 text-lg text-white bg-[#256D85] rounded-3xl hover:bg-[#00CC76] sm:w-auto sm:mb-0 duration-500 "

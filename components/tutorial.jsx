@@ -22,6 +22,7 @@ const tutorial = () => {
             alt="spamcomments"
             width={450}
             className="object-contain lg:w-[100%] md:w-[70%] w-[100%] h-auto"
+            priority="true"
           />
         </motion.div>
         <div className="lg:max-w-[985px] flex flex-col gap-5">
@@ -44,7 +45,7 @@ const tutorial = () => {
             </button>
           </motion.div>
           <motion.div variants={fadeIn('up', 'tween', 0.4, 1)} className="flex justify-start">
-            <Link href={'./login'} as="Login">
+            <Link rel="preload" href={'./login'} as="Login">
               <button className=" px-4 py-2  rounded-full flex items-center justify-center flex-row bg-[#1d5567] hover:bg-[#003049] duration-500 text-white hover:gap-2 ">
                 <p
                   style={{ fontFamily: 'Sarabun, sans-serif' }}
