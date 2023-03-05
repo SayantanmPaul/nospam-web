@@ -84,7 +84,7 @@ const navbar = () => {
           >
             Contact Us
           </a>
-          <Link rel="preload" href={'/login'} as="LogIn">
+          <Link rel="preload" href={'/workspace'} as="Works">
             <button>
               <p
                 className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white hover:bg-[#003049] py-[6px] pt-1 px-6 rounded-3xl duration-300 `}

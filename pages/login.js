@@ -14,7 +14,7 @@ const Login = () => {
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'http://localhost:3000/register' });
+    signIn('google', { callbackUrl: 'http://localhost:3000/workspace/' });
   }
   return (
     <Layout>
@@ -71,17 +71,16 @@ const Login = () => {
             <a className="text-xs">or</a>
             <div className="w-auto h-[1px] bg-gray-300"></div>
           </div>
-          <div className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  ">
+          <button
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  "
+          >
             <Image src={Google} alt="google" width={25} />
-            <button
-              onClick={handleGoogleSignIn}
-              style={{ fontFamily: 'Poppins, sans-serif' }}
-              type="submit"
-              className="text-sm"
-            >
+            <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-sm">
               Sigin with Google
-            </button>
-          </div>
+            </p>
+          </button>
           <div className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  ">
             <Image src={Gihub} alt="google" width={20} />
             <button style={{ fontFamily: 'Poppins, sans-serif' }} type="button" className=" text-sm">
