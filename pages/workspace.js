@@ -1,4 +1,3 @@
-import secondNav from '@/components/nav22';
 import React from 'react';
 import Image from 'next/image';
 import Logo from '../public/nospamlogo.svg';
@@ -88,7 +87,7 @@ export default function Workspace() {
           </div>
         </nav>
       </div>
-      <iframe src="https://nospam.onrender.com/webview/" title="webview" className="w-full h-screen"></iframe>
+      <iframe src={`${process.env.REACT_APP_API_URL}/webview/`} title="webview" className="w-full h-screen"></iframe>
 
       <div className="footerbar relative ">
         <div className="bg-[#122D42] ">
