@@ -16,6 +16,12 @@ const Login = () => {
   async function handleGoogleSignIn() {
     signIn('google', { callbackUrl: 'http://localhost:3000/workspace/' });
   }
+
+  // github login function
+  async function handleGithubSignIn() {
+    signIn('github', { callbackUrl: 'http://localhost:3000/workspace/' });
+  }
+
   return (
     <Layout>
       <Head>
@@ -57,7 +63,7 @@ const Login = () => {
           {/* login butons */}
           <div className="input-button">
             <button
-              className="lg:w-3/5 md:w-4/5 w-full mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 p-1 pb-2 text-green-50 text-lg rounded-full hover:bg-gradient-to-r
+              className="lg:w-3/5 md:w-4/5 w-full mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 p-2 text-green-50 text-lg rounded-full hover:bg-gradient-to-r
                hover:from-blue-800 hover:to-purple-800 duration-300 "
               type="submit"
             >
@@ -81,12 +87,16 @@ const Login = () => {
               Sigin with Google
             </p>
           </button>
-          <div className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  ">
+          <button
+            onClick={handleGithubSignIn}
+            type="button"
+            className="input-button py-1 items-center flex flex-row border rounded-full justify-center gap-2 hover:bg-slate-200  "
+          >
             <Image src={Gihub} alt="google" width={20} />
-            <button style={{ fontFamily: 'Poppins, sans-serif' }} type="button" className=" text-sm">
+            <p style={{ fontFamily: 'Poppins, sans-serif' }} className=" text-sm">
               Sigin with Gihub
-            </button>
-          </div>
+            </p>
+          </button>
         </form>
         {/* bottom */}
         <div className="flex flex-row justify-center gap-1 ">
