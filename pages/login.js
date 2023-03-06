@@ -10,15 +10,17 @@ import styles from '../styles/form.module.css';
 import { useState } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useFormik } from 'formik';
+import login_validate from '@/formik_hooks/validation';
 
 const Login = () => {
   const [show, setShow] = useState(false);
-
+  // formik hooks uses
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
+    validate: login_validate,
     onSubmit,
   });
 
@@ -48,7 +50,7 @@ const Login = () => {
         </div>
 
         {/* form */}
-        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-5 ">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -62,6 +64,13 @@ const Login = () => {
               <HiAtSymbol width={25} />
             </span>
           </div>
+          {formik.errors.email && formik.touched.email ? (
+            <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
+              {formik.errors.email}
+            </span>
+          ) : (
+            <></>
+          )}
 
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
@@ -76,6 +85,13 @@ const Login = () => {
               <HiFingerPrint width={25} className="cursor-pointer hover:text-[#146690] duration-300" />
             </span>
           </div>
+          {formik.errors.password && formik.touched.password ? (
+            <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
+              {formik.errors.password}
+            </span>
+          ) : (
+            <></>
+          )}
           {/* login butons */}
           <div className="input-button">
             <button
