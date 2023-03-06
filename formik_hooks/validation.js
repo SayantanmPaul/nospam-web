@@ -1,6 +1,6 @@
 // for login page
 
-export function login_validate(values) {
+export default function login_validate(values) {
   const errors = {};
 
   //email validation
@@ -18,6 +18,7 @@ export function login_validate(values) {
   } else if (values.password.includes(' ')) {
     errors.password = 'No blank spaces';
   }
+
   return errors;
 }
 

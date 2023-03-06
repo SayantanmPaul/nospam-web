@@ -14,7 +14,8 @@ import login_validate from '@/formik_hooks/validation';
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  // formik hooks uses
+
+  // formik hooks to get the from inputs
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -52,7 +53,11 @@ const Login = () => {
         {/* form */}
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
           {/* email input section */}
-          <div className={`${styles.input_group} flex border rounded-xl relative`}>
+          <div
+            className={`${styles.input_group} ${
+              formik.errors.email && formik.touched.email ? 'border-rose-400' : ''
+            } flex border rounded-xl relative`}
+          >
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
               className={`${styles.input_text} w-full py-3 px-6 border rounded-xl bg-slate-50 focus:outline-none border-none text-sm `}
@@ -76,7 +81,11 @@ const Login = () => {
           )}
 
           {/* password input section */}
-          <div className={`${styles.input_group} flex border rounded-xl relative`}>
+          <div
+            className={`${styles.input_group} ${
+              formik.errors.password && formik.touched.password ? 'border-rose-400' : ''
+            } flex border rounded-xl relative`}
+          >
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
               className={`${styles.input_text} w-full py-3 px-6 border rounded-xl bg-slate-50 focus:outline-none border-none text-sm `}
@@ -119,7 +128,6 @@ const Login = () => {
           </div>
 
           {/* google signin button */}
-
           <button
             onClick={handleGoogleSignIn}
             type="button"
@@ -130,9 +138,6 @@ const Login = () => {
               Sigin with Google
             </p>
           </button>
-
-          {/* github signIn button */}
-
           <button
             onClick={handleGithubSignIn}
             type="button"
@@ -144,7 +149,6 @@ const Login = () => {
             </p>
           </button>
         </form>
-
         {/* bottom to redirect to sign up page */}
         <div className="flex flex-row justify-center gap-1 ">
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
