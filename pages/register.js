@@ -6,8 +6,25 @@ import Logo from '../public/nospamlogo.svg';
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from 'react-icons/hi';
 import styles from '../styles/form.module.css';
 import { useState } from 'react';
+import { useFormik } from 'formik';
+
 const Register = () => {
   const [show, setShow] = useState({ password: false, cpassword: false });
+
+  const formik = useFormik({
+    initialValues: {
+      userName: '',
+      email: '',
+      password: '',
+      cpassword: '',
+    },
+    onSubmit,
+  });
+
+  async function onSubmit(values) {
+    console.log(values);
+  }
+
   return (
     <Layout>
       <Head>
@@ -20,7 +37,7 @@ const Register = () => {
         </div>
 
         {/* form */}
-        <form className="flex flex-col gap-5 ">
+        <form className="flex flex-col gap-5 " onSubmit={formik.handleSubmit}>
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -28,6 +45,7 @@ const Register = () => {
               type="text"
               name="Username"
               placeholder="Username"
+              {...formik.getFieldProps('userName')}
             />
             <span className="icon flex items-center pr-6">
               <HiOutlineUser width={25} />
@@ -40,6 +58,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="Email"
+              {...formik.getFieldProps('email')}
             />
             <span className="icon flex items-center pr-6">
               <HiAtSymbol width={25} />
@@ -53,6 +72,7 @@ const Register = () => {
               type={`${show.password ? 'text' : 'password'}`}
               name="password"
               placeholder="password"
+              {...formik.getFieldProps('password')}
             />
             <span
               className="icon flex items-center px-6"
@@ -68,6 +88,7 @@ const Register = () => {
               type={`${show.cpassword ? 'text' : 'password'}`}
               name="cpassword"
               placeholder="Confirm Password"
+              {...formik.getFieldProps('cpassword')}
             />
             <span
               className="icon flex items-center px-6"

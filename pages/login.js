@@ -9,8 +9,22 @@ import { HiAtSymbol, HiFingerPrint } from 'react-icons/hi';
 import styles from '../styles/form.module.css';
 import { useState } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useFormik } from 'formik';
+
 const Login = () => {
   const [show, setShow] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    onSubmit,
+  });
+
+  async function onSubmit(values) {
+    console.log(values);
+  }
 
   // google handler function
   async function handleGoogleSignIn() {
@@ -34,7 +48,7 @@ const Login = () => {
         </div>
 
         {/* form */}
-        <form className="flex flex-col gap-5 ">
+        <form onSubmit={formik.handleSubmit} className="flex flex-col gap-5 ">
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -42,6 +56,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
+              {...formik.getFieldProps('email')}
             />
             <span className="icon flex items-center pr-6">
               <HiAtSymbol width={25} />
@@ -55,6 +70,7 @@ const Login = () => {
               type={`${show ? 'text' : 'password'}`}
               name="password"
               placeholder="password"
+              {...formik.getFieldProps('password')}
             />
             <span className="icon flex items-center px-6" onClick={() => setShow(!show)}>
               <HiFingerPrint width={25} className="cursor-pointer hover:text-[#146690] duration-300" />
