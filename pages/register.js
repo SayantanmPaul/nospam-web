@@ -7,17 +7,20 @@ import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from 'react-icons/hi';
 import styles from '../styles/form.module.css';
 import { useState } from 'react';
 import { useFormik } from 'formik';
+import { signup_validate } from '@/formik_hooks/validation';
 
 const Register = () => {
   const [show, setShow] = useState({ password: false, cpassword: false });
 
+  // formik hooks to get the from inputs
   const formik = useFormik({
     initialValues: {
       userName: '',
       email: '',
       password: '',
-      cpassword: '',
+      confirmpassword: '',
     },
+    validate: signup_validate,
     onSubmit,
   });
 
@@ -37,7 +40,10 @@ const Register = () => {
         </div>
 
         {/* form */}
-        <form className="flex flex-col gap-5 " onSubmit={formik.handleSubmit}>
+
+        <form className="flex flex-col gap-2 " onSubmit={formik.handleSubmit}>
+          {/* userName input section */}
+
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -51,6 +57,8 @@ const Register = () => {
               <HiOutlineUser width={25} />
             </span>
           </div>
+
+          {/* email input section */}
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -65,6 +73,16 @@ const Register = () => {
             </span>
           </div>
 
+          {/* print email errors from validation.js */}
+          {formik.errors.email && formik.touched.email ? (
+            <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
+              {formik.errors.email}
+            </span>
+          ) : (
+            <></>
+          )}
+
+          {/* password input section */}
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -81,14 +99,25 @@ const Register = () => {
               <HiFingerPrint width={25} className="cursor-pointer hover:text-[#146690] duration-300" />
             </span>
           </div>
+
+          {/* print password errors from validation.js */}
+          {formik.errors.password && formik.touched.password ? (
+            <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
+              {formik.errors.password}
+            </span>
+          ) : (
+            <></>
+          )}
+
+          {/* confirmpassword input section */}
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
               className={`${styles.input_text} w-full py-3 px-6 border rounded-xl bg-slate-50 focus:outline-none border-none text-sm `}
               type={`${show.cpassword ? 'text' : 'password'}`}
-              name="cpassword"
+              name="confirmpassword"
               placeholder="Confirm Password"
-              {...formik.getFieldProps('cpassword')}
+              {...formik.getFieldProps('confirmpassword')}
             />
             <span
               className="icon flex items-center px-6"
@@ -97,6 +126,16 @@ const Register = () => {
               <HiFingerPrint width={25} className="cursor-pointer hover:text-[#146690] duration-300" />
             </span>
           </div>
+
+          {/* print confirmpassword errors from validation.js */}
+          {formik.errors.confirmpassword && formik.touched.confirmpassword ? (
+            <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
+              {formik.errors.confirmpassword}
+            </span>
+          ) : (
+            <></>
+          )}
+
           {/* login butons */}
           <div className="input-button">
             <button
@@ -110,7 +149,8 @@ const Register = () => {
             </button>
           </div>
         </form>
-        {/* bottom */}
+
+        {/* bottom to redirect to signin page */}
         <div className="flex flex-row justify-center pb-5 gap-1">
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
             already have a account?

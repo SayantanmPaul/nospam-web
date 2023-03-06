@@ -51,6 +51,7 @@ const Login = () => {
 
         {/* form */}
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
+          {/* email input section */}
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -64,6 +65,8 @@ const Login = () => {
               <HiAtSymbol width={25} />
             </span>
           </div>
+
+          {/* print email errors from validation.js */}
           {formik.errors.email && formik.touched.email ? (
             <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
               {formik.errors.email}
@@ -72,6 +75,7 @@ const Login = () => {
             <></>
           )}
 
+          {/* password input section */}
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -85,6 +89,8 @@ const Login = () => {
               <HiFingerPrint width={25} className="cursor-pointer hover:text-[#146690] duration-300" />
             </span>
           </div>
+
+          {/* print password errors from validation.js */}
           {formik.errors.password && formik.touched.password ? (
             <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-xs text-start px-6 text-red-500">
               {formik.errors.password}
@@ -92,7 +98,8 @@ const Login = () => {
           ) : (
             <></>
           )}
-          {/* login butons */}
+
+          {/* credential login butons */}
           <div className="input-button">
             <button
               className="lg:w-3/5 md:w-4/5 w-full mt-4 bg-gradient-to-r from-blue-500 to-indigo-500 p-2 text-green-50 text-lg rounded-full hover:bg-gradient-to-r
@@ -104,11 +111,15 @@ const Login = () => {
               </p>
             </button>
           </div>
+
           <div className="grid grid-cols-3 items-center justify-center">
             <div className="w-auto h-[1px] bg-gray-300"></div>
             <a className="text-xs">or</a>
             <div className="w-auto h-[1px] bg-gray-300"></div>
           </div>
+
+          {/* google signin button */}
+
           <button
             onClick={handleGoogleSignIn}
             type="button"
@@ -119,6 +130,9 @@ const Login = () => {
               Sigin with Google
             </p>
           </button>
+
+          {/* github signIn button */}
+
           <button
             onClick={handleGithubSignIn}
             type="button"
@@ -130,7 +144,8 @@ const Login = () => {
             </p>
           </button>
         </form>
-        {/* bottom */}
+
+        {/* bottom to redirect to sign up page */}
         <div className="flex flex-row justify-center gap-1 ">
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
             don&#39;t have a account yet?
