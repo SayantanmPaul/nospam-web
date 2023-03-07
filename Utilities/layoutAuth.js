@@ -32,27 +32,57 @@ export default function Layout({ children }) {
           >
             <SwiperSlide>
               <div>
-                <Image src={Img1} alt="img1" width={1000} className="rounded-lg object-cover h-full w-full" />
+                <Image
+                  src={Img1}
+                  alt="img1"
+                  width={1000}
+                  className="rounded-lg object-cover h-full w-full"
+                  priority="true"
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div>
-                <Image src={Img3} alt="img1" width={1000} className="rounded-lg object-cover  h-full w-full" />
+                <Image
+                  src={Img3}
+                  alt="img1"
+                  width={1000}
+                  className="rounded-lg object-cover  h-full w-full"
+                  priority="true"
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div>
-                <Image src={Img1} alt="img1" width={1000} className="rounded-lg object-cover h-full w-full" />
+                <Image
+                  src={Img1}
+                  alt="img1"
+                  width={1000}
+                  className="rounded-lg object-cover h-full w-full"
+                  priority="true"
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div>
-                <Image src={Img1} alt="img1" width={1000} className="rounded-lg object-cover h-full w-full" />
+                <Image
+                  src={Img1}
+                  alt="img1"
+                  width={1000}
+                  className="rounded-lg object-cover h-full w-full"
+                  priority="true"
+                />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div>
-                <Image src={Img1} alt="img1" width={1000} className="rounded-lg object-cover h-full w-full" />
+                <Image
+                  src={Img1}
+                  alt="img1"
+                  width={1000}
+                  className="rounded-lg object-cover h-full w-full"
+                  priority="true"
+                />
               </div>
             </SwiperSlide>
           </Swiper>

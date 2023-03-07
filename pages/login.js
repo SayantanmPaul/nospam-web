@@ -26,7 +26,14 @@ const Login = () => {
   });
 
   async function onSubmit(values) {
-    console.log(values);
+    const status = await signIn('credentials', {
+      redirect: false,
+      email: values.email,
+      password: values.password,
+      callbackUrl: '/workspace',
+    });
+
+    console.log(status);
   }
 
   // google handler function
