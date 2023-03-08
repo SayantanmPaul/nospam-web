@@ -24,6 +24,10 @@ const Register = () => {
     onSubmit,
   });
 
+  async function onSubmit(values) {
+    console.log(values);
+  }
+
   return (
     <Layout>
       <Head>
@@ -43,7 +47,7 @@ const Register = () => {
           <div className={`${styles.input_group} flex border rounded-xl relative`}>
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
-              className={`${styles.input_text} w-full py-3 px-6 border grid grid-cols rounded-xl bg-slate-50 focus:outline-none border-none text-sm `}
+              className={`${styles.input_text} w-full py-3 px-6 border rounded-xl bg-slate-50 focus:outline-none border-none text-sm `}
               type="text"
               name="Username"
               placeholder="Username"
