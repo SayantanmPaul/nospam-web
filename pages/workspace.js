@@ -1,138 +1,219 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Logo from '../public/nospamlogo.svg';
 import FontStyles from '../styles/navbar.module.css';
 import { Dropdown, Avatar, Text } from '@nextui-org/react';
 import { useSession, signOut, getSession } from 'next-auth/react';
+import { Disclosure } from '@headlessui/react';
 
+import { BiDotsHorizontalRounded } from 'react-icons/bi';
+import { CgMenuRight } from 'react-icons/cg';
+import Bot from '../public/userbot.jpg';
+import { AiOutlineCoffee } from 'react-icons/ai';
+import { FiHelpCircle } from 'react-icons/fi';
+import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
+import { FaPizzaSlice } from 'react-icons/fa';
 const Workspace = () => {
   const { data: session, status } = useSession();
+  const [nav, setnav] = useState(false);
+  const handleNav = () => {
+    setnav(!nav);
+  };
 
   if (status === 'authenticated') {
     return (
       <div>
-        <div className="static">
-          <nav className="navbarhead bg-white">
-            <div className="mx-[8%] lg:mx-16 mt-4 ">
-              <div className=" flex flex-row justify-between  items-center mx-auto gap-6 ">
-                <button className=" object-contain h-auto w-25 ">
-                  <Image src={Logo} alt="Logo" width={140} priority="true" />
-                </button>
-
-                {/* desktop view */}
-                <div className=" gap-6 ml-auto flex flex-row items-center ">
-                  <a
-                    href="#"
-                    className={`${FontStyles.underline_animation} ${FontStyles.navtext} hidden lg:block hover-underline-animation lg:text-xl text-base leading-6 text-[#00AA95] hover:text-[#2D7D90] transition duration-300 relative`}
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#"
-                    className={`${FontStyles.underline_animation} ${FontStyles.navtext} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
-                  >
-                    About
-                  </a>
-                  <a
-                    href="https://github.com/SayantanmPaul/nospam-web"
-                    className={`${FontStyles.underline_animation} ${FontStyles.navtext} hidden lg:block md:block hover-underline-animation lg:text-xl text-base leading-6 text-[#00AA95] hover:text-[#2D7D90] transition duration-300 relative`}
-                  >
-                    Source Code
-                  </a>
-                  <a
-                    href="#"
-                    className={`${FontStyles.underline_animation} ${FontStyles.navtext} hidden lg:block hover-underline-animation lg:text-xl text-base leading-6 text-[#00AA95] font-Bebas hover:text-[#2D7D90] transition duration-300 relative`}
-                  >
-                    Contact Us
-                  </a>
-                </div>
-
-                <Dropdown placement="bottom-left">
-                  <Dropdown.Trigger>
-                    <Avatar rel="preload" bordered size="md" as="button" color="secondary" src={session.user.image} />
-                  </Dropdown.Trigger>
-                  <Dropdown.Menu color="secondary" aria-label="Avatar Actions">
-                    <Dropdown.Item textValue="user" key="profile" css={{ height: '$18' }}>
-                      <Text b color="#003049">
-                        {session.user.name}
-                      </Text>
-                      <br></br>
-                      <Text b color="#003049">
-                        {session.user.email}
-                      </Text>
-                    </Dropdown.Item>
-                    <Dropdown.Item
-                      textValue="Details about the project  "
-                      className="block lg:hidden"
-                      key="settings"
-                      withDivider
-                    >
-                      About
-                    </Dropdown.Item>
-                    <Dropdown.Item textValue="Source code" className="block lg:hidden" key="analytics" withDivider>
-                      <a href="https://github.com/SayantanmPaul/nospam-web"> Source Code </a>
-                    </Dropdown.Item>
-
-                    <Dropdown.Item textValue="bug report" className="block lg:hidden" key="system">
-                      Contact Us
-                    </Dropdown.Item>
-
-                    <Dropdown.Item textValue="logout" key="logout" color="error" withDxivider>
-                      <div onClick={() => signOut()}>Log Out</div>
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
+        <Disclosure as="nav" className="block lg:hidden">
+          <Disclosure.Button className="absolute right-0 inline-flex items-center peer justify-center rounded-md p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-white group">
+            <div className=" lg:hidden  w-screen flex flex-row justify-between items-center px-[3%] ">
+              <Image src={Logo} alt="nospam" width={130} className="pl-[3%] md:pl-[6%]" />
+              <CgMenuRight className="block lg:hidden h-6 w-6 md:mr-[3%] " aria-hidden="true" />
             </div>
-          </nav>
-        </div>
-        <iframe
-          src="https://nospam.onrender.com/webview/"
-          title="webview"
-          className="w-full h-screen"
-          sandbox="allow-scripts allow-same-origin allow-forms"
-          seamless
-        ></iframe>
+          </Disclosure.Button>
 
-        <div className="footerbar relative ">
-          <div className="bg-[#122D42] ">
-            <div className="flex flex-row items-center justify-between lg:mx-16 md:mx-16  mx-5">
+          <div className="p-6 w-3/5 md:w-1/3 h-screen bg-green-100 z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500 ">
+            <div className="flex flex-col justify-start gap-6 items-center">
+              <Image src={Logo} alt="nospam" width={130} />
+              <div className="my-4 border-b border-gray-100 pb-4">
+                <div className=" flex justify-start flex-col items-center w-full ">
+                  {session.user.image ? (
+                    <Image
+                      className=" rounded-full border-2 p-1 border-green-300"
+                      src={session.user.image}
+                      alt="user"
+                      width={82}
+                      height={82}
+                    />
+                  ) : (
+                    <Image
+                      className=" rounded-full border-2 p-1 border-green-300"
+                      src={Bot}
+                      alt="user"
+                      width={82}
+                      height={82}
+                    />
+                  )}
+                  <p
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                    className="text-xs py-2 text-[#256D85] font-medium  "
+                  >
+                    Sign in as:
+                  </p>
+                  <p
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                    className="text-sm py-1 text-[#256D85] font-semibold  "
+                  >
+                    {session.user.name}
+                  </p>
+                  <div className="w-30">
+                    <p
+                      style={{ fontFamily: 'Poppins, sans-serif' }}
+                      className="text-xs py-1 text-[#256D85] font-semibold   "
+                    >
+                      {session.user.email}
+                    </p>
+                  </div>
+                </div>
+              </div>
               <div className="">
-                <Image className=" w-[109px] my-2" src={Logo} alt="logo" width={50} priority="true" />
+                <div
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                >
+                  <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
+                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Home</h3>
+                </div>
+                <div
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                >
+                  <AiOutlineCoffee className="text-xl text-gray-900 group-hover:text-white " />
+                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">About</h3>
+                </div>
+                <div
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                >
+                  <BiGitBranch className="text-xl text-gray-900 group-hover:text-white " />
+                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Source Code</h3>
+                </div>
+                <div
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                >
+                  <FiHelpCircle className="text-xl text-gray-900 group-hover:text-white " />
+                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Help Desk</h3>
+                </div>
+                <div className=" fixed bottom-0  py-5">
+                  <div
+                    onClick={() => signOut()}
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-8 hover:bg-gray-800 p-2 border-2 border-green-300 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <BiLogOut className="text-xl text-gray-900 group-hover:text-green-500 " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-black pr-6">Log out</h3>
+                  </div>
+                </div>
               </div>
-
-              <div className="footer-col lg:flex md:flex hidden flex-row items-center justify-between lg:pl-24 md:pl-24   ">
-                <h4 className=" text-[10px] leading-4 font-medium text-[#00AA95] font-Inter hover:text-green-200 transition duration-300">
-                  ©2022 NoSpam. | All rights reserved
-                </h4>
-              </div>
-              <ul className=" flex flex-row pt-2 gap-3">
-                <li>
-                  <a
-                    className="text-[10px] leading-8 font-medium text-[#256D85] hover:text-green-700 transition duration-300"
-                    href="#"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-[10px] leading-8 font-medium text-[#256D85] hover:text-green-700 transition duration-300"
-                    href="https://github.com/SayantanmPaul/nospam-web"
-                  >
-                    Source Code
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-[10px] leading-8 font-medium text-[#256D85] hover:text-green-700 transition duration-300"
-                    href="#"
-                  >
-                    Help Desk
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
+        </Disclosure>
+        <div className=" flex flex-row ">
+          <div className="lg:block hidden">
+            <div className="p-6 w-3/5 md:w-1/3 h-screen bg-green-100  top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500 ">
+              <div className="flex flex-col justify-start gap-6 items-center">
+                <Image src={Logo} alt="nospam" width={130} />
+                <div className="my-4 border-b border-gray-100 pb-4">
+                  <div className=" flex justify-start flex-col items-center w-full ">
+                    {session.user.image ? (
+                      <Image
+                        className=" rounded-full border-2 p-1 border-green-300"
+                        src={session.user.image}
+                        alt="user"
+                        width={82}
+                        height={82}
+                      />
+                    ) : (
+                      <Image
+                        className=" rounded-full border-2 p-1 border-green-300"
+                        src={Bot}
+                        alt="user"
+                        width={82}
+                        height={82}
+                      />
+                    )}
+                    <p
+                      style={{ fontFamily: 'Poppins, sans-serif' }}
+                      className="text-xs py-2 text-[#256D85] font-medium  "
+                    >
+                      Sign in as:
+                    </p>
+                    <p
+                      style={{ fontFamily: 'Poppins, sans-serif' }}
+                      className="text-sm py-1 text-[#256D85] font-semibold  "
+                    >
+                      {session.user.name}
+                    </p>
+                    <div className="w-30">
+                      <p
+                        style={{ fontFamily: 'Poppins, sans-serif' }}
+                        className="text-xs py-1 text-[#256D85] font-semibold   "
+                      >
+                        {session.user.email}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="">
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Home</h3>
+                  </div>
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <AiOutlineCoffee size={23} className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">About</h3>
+                  </div>
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <BiGitBranch className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Source Code</h3>
+                  </div>
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <FiHelpCircle className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Help Desk</h3>
+                  </div>
+                  <div className=" fixed bottom-0  py-5">
+                    <div
+                      onClick={() => signOut()}
+                      style={{ fontFamily: 'Sarabun, sans-serif' }}
+                      className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-8 hover:bg-gray-800 p-2 border-2 border-green-300 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                    >
+                      <BiLogOut className="text-xl text-gray-900 group-hover:text-green-500 " />
+                      <h3 className="text-base text-gray-800 group-hover:text-white font-black pr-6">Log out</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <iframe
+            src="https://nospam.onrender.com/webview/"
+            title="webview"
+            className=" h-screen w-full pt-10 lg:pt-0 lg:m-2  "
+            sandbox="allow-scripts allow-same-origin allow-forms"
+            seamless
+          ></iframe>
         </div>
       </div>
     );
