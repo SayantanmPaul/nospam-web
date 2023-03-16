@@ -33,15 +33,17 @@ const Index = () => {
           <Tutorial />
         </div>
         <div
-          className={`${Styles.pxpadding} lg:px-28 px-6 bg-repeat flex justify-center `}
+          className={`${Styles.pxpadding} lg:px-28 px-6 bg-repeat flex justify-center flex-col `}
           style={{ backgroundImage: 'url(https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png)' }}
         >
-          <div className="my-20">
+          <div className="mt-20 lg:mb-10 mb-5 flex flex-col items-center">
             <Specialiy />
+          </div>
+          <div className=" flex flex-col items-center">
+            <Getstarted />
           </div>
         </div>
 
-        <Getstarted />
         <Footer />
       </div>
     </>
