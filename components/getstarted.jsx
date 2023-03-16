@@ -30,17 +30,16 @@ const getstarted = () => {
             Seems you are <br className=""></br> more interested in it.
           </motion.h2>
         </div>
-        <div className="lg:py-9 py-6 mb-3 z-10">
-          <motion.button
-            variants={textVariant(0.9)}
+        <motion.div variants={textVariant(0.8)} className="lg:py-9 py-6 mb-3 z-10">
+          <button
             style={{ fontFamily: 'Sarabun, sans-serif' }}
             className="bg-[#122D42] hover:bg-[#04273a] rounded-full duration-500"
           >
             <p className="text-white uppercase font-semibold tracking-wide text-sm lg:text-base hover:text-[#3deba2] py-1 px-5 duration-500">
               Let's get started
             </p>
-          </motion.button>
-        </div>
+          </button>
+        </motion.div>
         <Image
           src={bgimage}
           alt="imagebackground"
