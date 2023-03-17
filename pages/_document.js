@@ -19,7 +19,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Fjalla+One&family=Gothic+A1:wght@400;800&family=Oswald&family=Poppins&family=Sarabun:wght@400;500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Bebas+Neue&family=Caveat&family=Fjalla+One&family=Gothic+A1:wght@400;800&family=Oswald&family=Poppins&family=Sarabun:wght@400;500;600&display=swap"
             rel="stylesheet"
           ></link>
         </Head>

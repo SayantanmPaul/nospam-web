@@ -5,6 +5,8 @@ import Navbar from '@/components/navbar';
 import Specialiy from '@/components/speciality';
 import Tutorial from '@/components/tutorial';
 import Styles from '../styles/defaultstyles';
+import Image from 'next/image';
+import backgroundvillage from '../public/background2.jpg';
 
 import Head from 'next/head';
 
@@ -43,8 +45,22 @@ const Index = () => {
             <Getstarted />
           </div>
         </div>
-
-        <Footer />
+        <div className="bg-[#122D42] mt-10 overflow-hidden relative">
+          <div className={`${Styles.pxpadding} lg:px-28 px-6  flex flex-col `}>
+            <div className="z-10">
+              <Footer />
+            </div>
+            <Image
+              src={backgroundvillage}
+              alt="background"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              className=" absolute object-center z-0 opacity-10"
+            />
+          </div>
+        </div>
+        <div className="w-screen h-2 bg-green-500"></div>
       </div>
     </>
   );

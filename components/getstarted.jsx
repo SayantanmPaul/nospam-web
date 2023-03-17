@@ -44,7 +44,7 @@ const getstarted = () => {
           src={bgimage}
           alt="imagebackground"
           width={1200}
-          className=" h-full overflow-hidden object-none absolute opacity-30"
+          className=" h-full overflow-hidden object-cover absolute opacity-30"
         />
       </motion.div>
     </div>
