@@ -8,10 +8,11 @@ import Logo from '../public/nospamlogo.svg';
 import BoyCarsoul from '../public/boyimage.png';
 import GirlCarsoul from '../public/girlimage.png';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { navVariants } from '@/Utilities/motions';
 import FontStyles from 'styles/navbar.module.css';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -53,12 +54,13 @@ const NewNavbar = () => {
           >
             Source Code
           </a>
-          <a
-            href="#contactus"
-            className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
-          >
-            Contact Us
-          </a>
+          <ScrollLink activeClass="active" to="contactus" spy={true} smooth={true} offset={-70} duration={1500}>
+            <p
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+            >
+              Contact Us
+            </p>
+          </ScrollLink>
           <Link rel="preload" href={'/login'} as="Works">
             <button>
               <p
@@ -156,7 +158,7 @@ const NewNavbar = () => {
                     </h3>
                   </div>
                 </Link>
-                <Link href="#contactus">
+                <ScrollLink activeClass="active" to="contactus" spy={true} smooth={true} offset={-70} duration={1500}>
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer">
                     <FiHelpCircle className=" text-2xl text-gray-600 group-hover:text-white" />
                     <h3
@@ -166,7 +168,7 @@ const NewNavbar = () => {
                       Contact us
                     </h3>
                   </div>
-                </Link>
+                </ScrollLink>
               </div>
 
               <div className=" fixed  bottom-0 pb-5">
