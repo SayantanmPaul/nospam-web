@@ -7,8 +7,6 @@ import Logo from '../public/nospamlogo.svg';
 import BoyCarsoul from '../public/boyimage.png';
 import GirlCarsoul from '../public/girlimage.png';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { navVariants } from '@/Utilities/motions';
 import FontStyles from 'styles/navbar.module.css';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import Link from 'next/link';
@@ -18,28 +16,23 @@ import 'swiper/css/pagination';
 
 import { Autoplay, Pagination } from 'swiper';
 
-const NewNavbar = () => {
+const AboutNav = () => {
   return (
     <>
-      <motion.div
-        variants={navVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: 'true' }}
-        className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] "
-      >
+      <div className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] ">
         <button className=" object-contain h-auto w-40 ">
           <Image src={Logo} alt="Logo" width={149} />
         </button>
 
         {/* desktop view */}
         <div className="lg:flex hidden gap-6 ml-auto ">
-          <a
-            href="/"
-            className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
-          >
-            Home
-          </a>
+          <Link rel="preload" href={'/'}>
+            <p
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+            >
+              Home
+            </p>
+          </Link>
           <Link rel="preload" href={'/documentation'} as="About">
             <p
               className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
@@ -60,7 +53,7 @@ const NewNavbar = () => {
               Contact Us
             </p>
           </ScrollLink>
-          <Link rel="preload" href={'/login'} as="Works">
+          <Link rel="preload" href={'/login'} as="Login">
             <button>
               <p
                 className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white hover:bg-[#003049] py-2 pt-1 px-6 rounded-3xl duration-300 `}
@@ -126,26 +119,27 @@ const NewNavbar = () => {
             </div>
             <div className="flex justify-center">
               <div className=" my-10 ">
-                <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer ">
-                  <BiHomeAlt className=" text-2xl text-gray-600 group-hover:text-white" />
-                  <h3
-                    style={{ fontFamily: 'Sarabun, sans-serif' }}
-                    className="text-base text-gray-800 group-hover:text-white font-bold"
-                  >
-                    Home
-                  </h3>
-                </div>
-                <Link rel="preload" href={'./documentation'} as="About">
-                  <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-aut duration-200 cursor-pointer">
-                    <AiOutlineCoffee className=" text-2xl text-gray-600 group-hover:text-white" />
+                <Link rel="preload" href={'/'}>
+                  <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer ">
+                    <BiHomeAlt className=" text-2xl text-gray-600 group-hover:text-white" />
                     <h3
                       style={{ fontFamily: 'Sarabun, sans-serif' }}
                       className="text-base text-gray-800 group-hover:text-white font-bold"
                     >
-                      About
+                      Home
                     </h3>
                   </div>
                 </Link>
+
+                <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-aut duration-200 cursor-pointer">
+                  <AiOutlineCoffee className=" text-2xl text-gray-600 group-hover:text-white" />
+                  <h3
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-base text-gray-800 group-hover:text-white font-bold"
+                  >
+                    About
+                  </h3>
+                </div>
                 <Link rel="preload" href="https://github.com/SayantanmPaul/nospam-web">
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer">
                     <BiGitBranch className=" text-2xl text-gray-600 group-hover:text-white" />
@@ -186,8 +180,8 @@ const NewNavbar = () => {
             </div>
           </div>
         </Disclosure>
-      </motion.div>
+      </div>
     </>
   );
 };
-export default NewNavbar;
+export default AboutNav;
