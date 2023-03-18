@@ -13,7 +13,7 @@ import Bot from '../public/userbot.jpg';
 import { AiOutlineCoffee } from 'react-icons/ai';
 import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
-import { FaPizzaSlice } from 'react-icons/fa';
+
 const Workspace = () => {
   const { data: session, status } = useSession();
   const [nav, setnav] = useState(false);

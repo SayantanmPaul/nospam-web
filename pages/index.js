@@ -1,7 +1,7 @@
 import Footer from '@/components/footer';
 import Getstarted from '@/components/getstarted';
 import Hero from '@/components/hero';
-import Navbar from '@/components/navbar';
+import NewNavbar from '@/components/newnav';
 import Specialiy from '@/components/speciality';
 import Tutorial from '@/components/tutorial';
 import Styles from '../styles/defaultstyles';
@@ -21,7 +21,7 @@ const Index = () => {
       </Head>
       <div className="">
         <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5`}>
-          <Navbar />
+          <NewNavbar />
         </div>
         <div
           className={`${Styles.pxpadding} lg:px-28 px-6 bg-repeat `}

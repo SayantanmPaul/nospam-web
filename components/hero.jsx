@@ -16,7 +16,7 @@ const hero = () => {
       >
         <div className=" lg:max-w-[500px] w-full flex flex-col gap-8 ">
           <motion.h1
-            variants={textVariant(1.5)}
+            variants={textVariant(0.5)}
             viewport={{ once: 'false' }}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" capitalize lg:text-[55px] lg:leading-[80px] leading-[47px] md:text-5xl text-[40px] font-medium text-[#2D7D90] "
@@ -24,7 +24,7 @@ const hero = () => {
             Determine whether the comments are spam or not!
           </motion.h1>
           <motion.p
-            variants={textVariant(1.7)}
+            variants={textVariant(0.7)}
             viewport={{ once: 'false' }}
             style={{ fontFamily: 'Roboto' }}
             className="font-medium lg:text-lg md:text-lg text-sm leading-6  text-[#00AA95]"
@@ -33,7 +33,7 @@ const hero = () => {
             inappropriate, and promotional messages.
           </motion.p>
           <Link rel="preload" href={'./login'} as="Login">
-            <motion.button variants={textVariant(1.8)} className="flex justify-start">
+            <motion.button variants={textVariant(0.8)} className="flex justify-start">
               <p
                 className="inline-flex items-center font-medium justify-center px-6 py-2 mb-2 text-lg text-white bg-[#256D85] rounded-3xl hover:bg-[#00CC76] sm:w-auto sm:mb-0 duration-500 "
                 data-primary="green-400"
@@ -58,7 +58,7 @@ const hero = () => {
           </Link>
         </div>
         <motion.div
-          variants={fadeIn('up', 'tween', 1.3, 1)}
+          variants={fadeIn('up', 'tween', 0.3, 1)}
           className="object-contain md:w-[70%] w-[90%] h-auto flex justify-center"
         >
           <Image src={VectorCheck} alt="vectorimg" width={586} priority={true} />

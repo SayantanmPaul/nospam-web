@@ -4,7 +4,7 @@ import backgroundvillage from '../public/background2.jpg';
 const footer = () => {
   return (
     <>
-      <footer className="flex flex-col lg:items-center md:items-center">
+      <footer id="contactus" className="flex flex-col lg:items-center md:items-center">
         <div className="flex lg:flex-row flex-col lg:items-center  justify-between w-full max-w-[1240px] lg:pt-12 pt-4  pb-8">
           <div className=" flex flex-col gap-1 py-6 lg:px-0 md:px-[10%] px-0">
             <Image src={Logo} alt="nospam" width={130} />
