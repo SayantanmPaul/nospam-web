@@ -15,7 +15,7 @@ const Overview = () => {
         <div className="">
           <p
             style={{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.7' }}
-            className=" lg:text-2xl md:text-xl text-lg leading-10  text-[#003049] antialiased text-justify "
+            className=" lg:text-2xl md:text-xl text-base leading-10  text-[#003049] antialiased text-justify "
           >
             The project NoSpam aims to develop a machine learning algorithm that can accurately classify comments on
             YouTube videos as either spam or legitimate, based on various features such as the text content, the user's
@@ -35,7 +35,7 @@ const Overview = () => {
           </ReadExtra>
           <p
             style={{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.7' }}
-            className=" lg:text-2xl md:text-xl text-lg leading-10 py-4  text-[#003049] antialiased text-justify "
+            className=" lg:text-2xl md:text-xl text-base leading-10 py-4  text-[#003049] antialiased text-justify "
           >
             Check out the project report we have created{' '}
             <a

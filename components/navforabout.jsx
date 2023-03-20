@@ -28,27 +28,27 @@ const AboutNav = () => {
         <div className="lg:flex hidden gap-6 ml-auto ">
           <Link rel="preload" href={'/'}>
             <p
-              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}
             >
               Home
             </p>
           </Link>
           <Link rel="preload" href={'/documentation'} as="About">
             <p
-              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}
             >
               About
             </p>
           </Link>
           <a
             href="https://github.com/SayantanmPaul/nospam-web"
-            className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+            className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}
           >
             Source Code
           </a>
           <ScrollLink activeClass="active" to="contactus" spy={true} smooth={true} offset={-70} duration={1500}>
             <p
-              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] duration-300`}
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}
             >
               Contact Us
             </p>
@@ -56,7 +56,7 @@ const AboutNav = () => {
           <Link rel="preload" href={'/login'} as="Login">
             <button>
               <p
-                className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white hover:bg-[#003049] py-2 pt-1 px-6 rounded-3xl duration-300 `}
+                className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white tracking-tight hover:bg-[#003049] py-2 pt-1 px-6 rounded-3xl duration-300 `}
               >
                 Login/SignUp
               </p>
