@@ -1,5 +1,7 @@
 import AboutNav from '@/components/navforabout';
 import Overview from '@/components/overview';
+import TeamCredit from '@/components/teamcredit';
+
 import Styles from '../styles/defaultstyles';
 Overview;
 const Documentation = () => {
@@ -8,8 +10,9 @@ const Documentation = () => {
       <AboutNav />
       <div className=" flex items-center justify-center lg:pt-5 pt-4 ">
         <div className=" greenbox w-[100%] h-auto  rounded-lg bg-[#80FFDB] max-w-[1240px]">
-          <div className=" lg:p-10 md:p-8 p-5 -z-0">
+          <div className=" lg:p-10 md:p-8 p-5 -z-0 flex flex-col lg:gap-7 gap-4">
             <Overview />
+            <TeamCredit />
           </div>
         </div>
       </div>
