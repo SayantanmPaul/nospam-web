@@ -175,7 +175,7 @@ const TeamCredit = () => {
             </div>
           </motion.div>
           <motion.div
-            variants={textVariant(1.3)}
+            variants={textVariant(1.6)}
             viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
             className=" lg:col-start-2 lg:col-end-3 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
@@ -210,7 +210,7 @@ const TeamCredit = () => {
             </div>
           </motion.div>
           <motion.div
-            variants={textVariant(1.5)}
+            variants={textVariant(1.7)}
             viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
             className=" lg:col-start-3 lg:col-end-4 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"

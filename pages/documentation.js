@@ -10,7 +10,12 @@ import { staggerContainer } from '@/Utilities/motions';
 import BgAbout from '../public/aboutbg.jpg';
 const Documentation = () => {
   return (
-    <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5`}>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 3 }}
+      className={`${Styles.pxpadding} lg:px-28 px-6 pt-5`}
+    >
       <AboutNav />
       <div className=" flex flex-col items-center justify-center lg:pt-5 pt-4 ">
         {/* in green box */}
@@ -51,7 +56,7 @@ const Documentation = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Documentation;

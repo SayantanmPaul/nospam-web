@@ -7,6 +7,7 @@ import Tutorial from '@/components/tutorial';
 import Styles from '../styles/defaultstyles';
 import Image from 'next/image';
 import backgroundvillage from '../public/background2.jpg';
+import { motion } from 'framer-motion';
 
 import Head from 'next/head';
 
@@ -19,7 +20,7 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="">
+      <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 4 }} className="">
         <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5 `}>
           <NewNavbar />
         </div>
@@ -61,7 +62,7 @@ const Index = () => {
           </div>
         </div>
         <div className="w-screen h-2 bg-green-500"></div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import { Autoplay, Pagination } from 'swiper';
 import '../styles/layout.module.css';
 import Img1 from '../public/ghibliimg1.jpg';
@@ -11,9 +10,13 @@ import Img3 from '../public/ghibliimg3.jpg';
 import Img4 from '../public/ghibliimg4.jpg';
 import Img5 from '../public/ghibliimg5.jpg';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 export default function Layout({ children }) {
   return (
-    <div
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 5 }}
       style={{ backgroundImage: 'url(/background-blue.jpg)' }}
       className="flex h-screen bg-cover bg-center overflow-hidden  "
     >
@@ -94,6 +97,6 @@ export default function Layout({ children }) {
           <div className="lg:p-7 p-5 text-center">{children}</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
