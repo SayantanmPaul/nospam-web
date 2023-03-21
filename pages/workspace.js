@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Logo from '../public/nospamlogo.svg';
 import background from '../public/background-new.jpg';
-import FontStyles from '../styles/navbar.module.css';
-import { Dropdown, Avatar, Text } from '@nextui-org/react';
 import { useSession, signOut, getSession } from 'next-auth/react';
 import { Disclosure } from '@headlessui/react';
-
-import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import { CgMenuRight } from 'react-icons/cg';
 import Bot from '../public/userbot.jpg';
 import { AiOutlineCoffee } from 'react-icons/ai';
 import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 
 const Workspace = () => {
   const { data: session, status } = useSession();
@@ -23,7 +20,7 @@ const Workspace = () => {
 
   if (status === 'authenticated') {
     return (
-      <div>
+      <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 5 }}>
         <Disclosure as="nav" className="block lg:hidden">
           <Disclosure.Button className="absolute right-0 inline-flex items-center peer justify-center rounded-md p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-white group">
             <div className=" lg:hidden  w-screen flex flex-row justify-between items-center px-[3%] ">
@@ -223,7 +220,7 @@ const Workspace = () => {
             seamless
           ></iframe>
         </div>
-      </div>
+      </motion.div>
     );
   } else {
     return (
