@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Logo from '../public/nospamlogo.svg';
 import backgroundvillage from '../public/background2.jpg';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import Link from 'next/link';
 const footer = () => {
   return (
     <>
@@ -25,57 +27,71 @@ const footer = () => {
               >
                 NoSpam.
               </p>
-              <p
-                style={{ fontFamily: 'Sarabun, sans-serif' }}
-                className="text-white text-sm leading-7 tracking-normal cursor-pointer"
-              >
-                Home
-              </p>
-              <p
-                style={{ fontFamily: 'Sarabun, sans-serif' }}
-                className="text-white text-sm leading-7 tracking-normal cursor-pointer"
-              >
-                About us
-              </p>
-              <p
+              <ScrollLink activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={1500}>
+                <p
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="text-white text-sm leading-7 tracking-normal cursor-pointer"
+                >
+                  Home
+                </p>
+              </ScrollLink>
+              <Link rel="preload" href={'/documentation'} as="About">
+                <p
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="text-white text-sm leading-7 tracking-normal cursor-pointer"
+                >
+                  About us
+                </p>
+              </Link>
+              <a
+                href="https://github.com/SayantanmPaul/nospam-web"
                 style={{ fontFamily: 'Sarabun, sans-serif' }}
                 className="text-white text-sm leading-7 tracking-normal cursor-pointer"
               >
                 Source Code
-              </p>
-              <p
-                style={{ fontFamily: 'Sarabun, sans-serif' }}
-                className="text-white text-sm leading-7 tracking-normal cursor-pointer"
-              >
-                FAQs
-              </p>
+              </a>
+              <Link rel="preload" href={'/documentation'} as="About">
+                <p
+                  style={{ fontFamily: 'Sarabun, sans-serif' }}
+                  className="text-white text-sm leading-7 tracking-normal cursor-pointer"
+                >
+                  FAQs
+                </p>
+              </Link>
             </div>
             <div className="flex flex-row  lg:gap-10 md:gap-16 gap-10">
               <div>
-                <p
+                <a
+                  href="https://www.linkedin.com/in/avani-sethia-84b64621b"
                   className=" text-base text-[#00CC76] tracking-normal leading-5"
                   style={{ fontFamily: 'Barlow, sans-serif' }}
                 >
                   team
-                </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500 "
-                >
-                  Avani Sethia
-                </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
-                >
-                  Deblina Banerjee
-                </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500 "
-                >
-                  Durgesh Gupta
-                </p>
+                </a>
+                <Link href="https://www.linkedin.com/in/avani-sethia-84b64621b">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500 "
+                  >
+                    Avani Sethia
+                  </p>
+                </Link>
+                <Link href="https://www.linkedin.com/in/deblina-banerjee-231290206">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
+                  >
+                    Deblina Banerjee
+                  </p>
+                </Link>
+                <Link href="https://www.linkedin.com/in/durgesh-gupta-66017811a/">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500 "
+                  >
+                    Durgesh Gupta
+                  </p>
+                </Link>
               </div>
               <div>
                 <p
@@ -84,24 +100,30 @@ const footer = () => {
                 >
                   .
                 </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
-                >
-                  Tanisha Gupta
-                </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
-                >
-                  Shreya Dubey
-                </p>
-                <p
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
-                >
-                  Sayantan Paul
-                </p>
+                <Link href="https://www.linkedin.com/in/tanisha-gupta-a81158210">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
+                  >
+                    Tanisha Gupta
+                  </p>
+                </Link>
+                <Link href="https://www.linkedin.com/in/shreya-dubey-a03b2a232/">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
+                  >
+                    Shreya Dubey
+                  </p>
+                </Link>
+                <Link href="https://www.linkedin.com/in/imsayantanpaul/">
+                  <p
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="text-white text-sm leading-7 tracking-normal cursor-pointer uppercase hover:underline hover:text-[#00AA95] duration-500"
+                  >
+                    Sayantan Paul
+                  </p>
+                </Link>
               </div>
             </div>
             <div>

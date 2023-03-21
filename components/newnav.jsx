@@ -60,7 +60,7 @@ const NewNavbar = () => {
               Contact Us
             </p>
           </ScrollLink>
-          <Link rel="preload" href={'/login'} as="Works">
+          <Link rel="preload" href={'/login'} as="Login">
             <button>
               <p
                 className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white tracking-tight hover:bg-[#003049] py-2 pt-1 px-6 rounded-3xl duration-300 `}

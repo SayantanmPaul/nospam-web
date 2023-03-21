@@ -2,6 +2,7 @@ import bgimage from '../public/bgtestomonial.jpg';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeIn, textVariant } from '../Utilities/motions';
+import Link from 'next/link';
 const getstarted = () => {
   return (
     <div className=" lg:w-5/6 md:w-[80%] w-full ">
@@ -31,14 +32,16 @@ const getstarted = () => {
           </motion.h2>
         </div>
         <motion.div variants={textVariant(0.8)} className="lg:py-9 py-6 mb-3 z-10">
-          <button
-            style={{ fontFamily: 'Sarabun, sans-serif' }}
-            className="bg-[#122D42] hover:bg-[#04273a] rounded-full duration-500"
-          >
-            <p className="text-white uppercase font-semibold tracking-wide text-sm lg:text-base hover:text-[#3deba2] py-1 px-5 duration-500">
-              Let's get started
-            </p>
-          </button>
+          <Link rel="preload" href={'/login'} as="Login">
+            <button
+              style={{ fontFamily: 'Sarabun, sans-serif' }}
+              className="bg-[#122D42] hover:bg-[#04273a] rounded-full duration-500"
+            >
+              <p className="text-white uppercase font-semibold tracking-wide text-sm lg:text-base hover:text-[#3deba2] py-1 px-5 duration-500">
+                Let's get started
+              </p>
+            </button>
+          </Link>
         </motion.div>
         <Image
           src={bgimage}

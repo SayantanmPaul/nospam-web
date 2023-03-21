@@ -6,7 +6,7 @@ import VectorCheck from '../public/firstvector.png';
 
 const hero = () => {
   return (
-    <div className="flex justify-center">
+    <div id="Home" className="flex justify-center">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
