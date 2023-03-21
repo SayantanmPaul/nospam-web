@@ -9,24 +9,36 @@ import DeblinaBanerjee from '../public/team/deblinabanerjee.jpg';
 import AboutBackground from '../public/background2.jpg';
 import { HiMailOpen } from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { textVariant, staggerContainer, fadeIn } from '../Utilities/motions';
 import Link from 'next/link';
 
 const TeamCredit = () => {
   return (
     <div>
-      <div className="flex flex-col lg:gap-6 gap-3 lg:pt-6 md:pt-5 pt-3">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex flex-col lg:gap-6 gap-3 lg:pt-6 md:pt-5 pt-3"
+      >
         <div className="">
-          <h1
+          <motion.h1
+            variants={textVariant(0.1)}
+            viewport={{ once: 'false' }}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" lg:text-5xl md:text-4xl text-[28px]  font-medium lg:leading-10 leading-5 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-[#2D7D90] to-[#122D42] py-2 "
           >
             Project contributors
-          </h1>
+          </motion.h1>
         </div>
         <div className="  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 justify-center items-center md:gap-4 gap-3 lg:py-5 md:py-4 py-2 ">
-          <div
+          <motion.div
+            variants={textVariant(0.3)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -38,7 +50,7 @@ const TeamCredit = () => {
             </div>
             <p
               style={({ fontFamily: 'DM Sans, sans-serif' }, { fontWeight: 'bold' })}
-              className=" font-bold text-[#2D70F3] leading-8 text-center w-[180px] lg:text-base md:text-base text-sm  lg:pt-5 md:pt-5 pt-1  tracking-normal "
+              className=" font-bold text-[#6088d9] leading-8 text-center w-[180px] lg:text-base md:text-base text-sm  lg:pt-5 md:pt-5 pt-1  tracking-normal "
             >
               Avani Sethia
             </p>
@@ -56,10 +68,12 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={textVariant(0.5)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -89,10 +103,12 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={textVariant(0.7)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -122,10 +138,12 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={textVariant(0.9)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -155,10 +173,12 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={textVariant(1.3)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" lg:col-start-2 lg:col-end-3 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" lg:col-start-2 lg:col-end-3 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -188,10 +208,12 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            variants={textVariant(1.5)}
+            viewport={{ once: 'true' }}
             style={{ boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px' }}
-            className=" lg:col-start-3 lg:col-end-4 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#B1B2FF] duration-500 cursor-pointer"
+            className=" lg:col-start-3 lg:col-end-4 bg-white lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center lg:pt-8 md:pt-8 pt-4  lg:px-5 md:px-5 px-3 border-2 border-green-300 hover:border-[#8082fa] duration-500 cursor-pointer"
           >
             <div className=" rounded-full overflow-hidden border-2 border-[#00CC76] ">
               <Image
@@ -221,9 +243,9 @@ const TeamCredit = () => {
                 </button>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

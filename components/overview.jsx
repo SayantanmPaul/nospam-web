@@ -1,18 +1,27 @@
 import ReadExtra from './readmoreandless';
-
+import { motion } from 'framer-motion';
+import { textVariant, staggerContainer } from '../Utilities/motions';
 const Overview = () => {
   return (
     <div>
-      <div className="flex flex-col lg:gap-6 gap-3">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        className="flex flex-col lg:gap-6 gap-3"
+      >
         <div className="lg:pt-0 pt-2">
-          <h1
+          <motion.h1
+            variants={textVariant(0.2)}
+            viewport={{ once: 'true' }}
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
             className=" lg:text-5xl md:text-4xl text-3xl font-medium lg:leading-10 leading-5 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-[#2D7D90] to-[#122D42] py-2"
           >
             Overview
-          </h1>
+          </motion.h1>
         </div>
-        <div className="">
+        <motion.div variants={textVariant(0.4)} viewport={{ once: 'true' }} className="">
           <p
             style={{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.7' }}
             className=" lg:text-2xl md:text-xl text-base leading-10  text-[#003049] antialiased text-justify "
@@ -31,7 +40,10 @@ const Overview = () => {
             are some potential drawbacks ,the benefits of using spam detection project far outweigh the potential
             downsides. With its high accuracy, versatility and potential to improve overall communication security, a
             spam detection project is a wise investment for any organization looking to stay ahead of the game in
-            rapidly evolving digital landscape.
+            rapidly evolving digital landscape.The main features of the project can be highlighted as • Highly
+            predictive datasets crucial for effective and accurate decision making • Can be accessed easily • Free
+            access for everyone • Designed as an Open source project to support and allow developers from all over world
+            to collaborate and contribute to the project
           </ReadExtra>
           <p
             style={{ fontFamily: 'Poppins, sans-serif', lineHeight: '1.7' }}
@@ -45,8 +57,8 @@ const Overview = () => {
               click here
             </a>
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

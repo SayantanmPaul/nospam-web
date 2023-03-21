@@ -6,7 +6,7 @@ const ReadExtra = ({ children }) => {
     setReadMoreShow((prevState) => !prevState);
   };
 
-  const text = children;
+  const text = children.toString();
 
   return (
     <div className="">
