@@ -6,9 +6,11 @@ import ShreyaDubey from '../public/team/shreyadubey.jpeg';
 import DurgeshGupta from '../public/team/durgeshgupta.jpg';
 import AvanniSethia from '../public/team/avanisethia.jpeg';
 import DeblinaBanerjee from '../public/team/deblinabanerjee.jpg';
+import AboutBackground from '../public/background2.jpg';
 import { HiMailOpen } from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
 import Link from 'next/link';
+
 const TeamCredit = () => {
   return (
     <div>
