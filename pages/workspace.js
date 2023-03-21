@@ -10,6 +10,7 @@ import { AiOutlineCoffee } from 'react-icons/ai';
 import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Workspace = () => {
   const { data: session, status } = useSession();
@@ -74,27 +75,33 @@ const Workspace = () => {
                 </div>
               </div>
               <div className="">
-                <div
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                >
-                  <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
-                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Home</h3>
-                </div>
-                <div
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                >
-                  <AiOutlineCoffee className="text-xl text-gray-900 group-hover:text-white " />
-                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">About</h3>
-                </div>
-                <div
-                  style={{ fontFamily: 'Sarabun, sans-serif' }}
-                  className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                >
-                  <BiGitBranch className="text-xl text-gray-900 group-hover:text-white " />
-                  <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Source Code</h3>
-                </div>
+                <Link rel="preload" href={'/index'}>
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Home</h3>
+                  </div>
+                </Link>
+                <Link rel="preload" href={'/documentation'} as="About">
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <AiOutlineCoffee className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">About</h3>
+                  </div>
+                </Link>
+                <Link href="https://github.com/SayantanmPaul/nospam-web">
+                  <div
+                    style={{ fontFamily: 'Sarabun, sans-serif' }}
+                    className="flex mb-2  justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                  >
+                    <BiGitBranch className="text-xl text-gray-900 group-hover:text-white " />
+                    <h3 className="text-base text-gray-800 group-hover:text-white font-bold">Source Code</h3>
+                  </div>
+                </Link>
                 <div
                   style={{ fontFamily: 'Sarabun, sans-serif' }}
                   className="flex mb-2 justify-start items-center gap-4 lg:px-9 md:px-9 px-6 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
