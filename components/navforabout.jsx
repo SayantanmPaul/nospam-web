@@ -67,7 +67,7 @@ const AboutNav = () => {
           <Disclosure.Button className=" pt-2 inline-flex items-center peer justify-center text-[#2D7D90] focus:text-[#00AA95] focus:outline-none group ">
             <CgMenuRight className=" block lg:hidden" size={32} />
           </Disclosure.Button>
-          <div className=" lg:hidden block  p-6 w-3/5 md:w-[40%] h-screen bg-gradient-to-b from-[#80FFDB] to-[#2D7D90]  fixed top-0 -left-96 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500">
+          <div className=" z-40 lg:hidden block  p-6 w-3/5 md:w-[40%] h-screen bg-gradient-to-b from-[#80FFDB] to-[#2D7D90]  fixed top-0 -left-96 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500">
             <div className="flex flex-col justify-start items-center">
               <button className=" object-contain h-auto w-40 ">
                 <Image src={Logo} alt="Logo" width={149} />

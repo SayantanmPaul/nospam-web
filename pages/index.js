@@ -20,7 +20,7 @@ const Index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="">
-        <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5`}>
+        <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5 `}>
           <NewNavbar />
         </div>
         <div

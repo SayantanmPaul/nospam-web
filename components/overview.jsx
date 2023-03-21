@@ -7,7 +7,7 @@ const Overview = () => {
         <div className="lg:pt-0 pt-2">
           <h1
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
-            className=" lg:text-5xl md:text-4xl text-3xl font-medium lg:leading-10 leading-5 tracking-tight text-[#2D7D90]"
+            className=" lg:text-5xl md:text-4xl text-3xl font-medium lg:leading-10 leading-5 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-[#2D7D90] to-[#122D42] py-2"
           >
             Overview
           </h1>

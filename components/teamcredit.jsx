@@ -14,11 +14,11 @@ import Link from 'next/link';
 const TeamCredit = () => {
   return (
     <div>
-      <div className="flex flex-col lg:gap-6 gap-3">
+      <div className="flex flex-col lg:gap-6 gap-3 lg:pt-6 md:pt-5 pt-3">
         <div className="">
           <h1
             style={{ fontFamily: 'Fjalla One, sans-serif' }}
-            className=" lg:text-5xl md:text-4xl text-[28px]  font-medium lg:leading-10 leading-5 tracking-tight text-[#2D7D90]"
+            className=" lg:text-5xl md:text-4xl text-[28px]  font-medium lg:leading-10 leading-5 tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-[#2D7D90] to-[#122D42] py-2 "
           >
             Project contributors
           </h1>
