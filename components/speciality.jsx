@@ -47,7 +47,7 @@ const specialiy = () => {
             variants={fadeIn('up', 'tween', 0.4, 0.6)}
             className="flex flex-col items-center m-10 cursor-pointer "
           >
-            <Image src={Predictive} width={78} className="lg:w-24" />
+            <Image src={Predictive} alt="predictive" width={78} className="lg:w-24" />
             <p
               style={{ fontFamily: 'Sarabun, sans-serif' }}
               className="text-[#0D4C92] uppercase font-extrabold text-center lg:text-base text-sm w-44  p-2"
@@ -59,7 +59,7 @@ const specialiy = () => {
             variants={fadeIn('up', 'tween', 0.6, 0.6)}
             className="flex flex-col items-center m-10 cursor-pointer"
           >
-            <Image src={Eazyccess} width={65} className="lg:w-20" />
+            <Image src={Eazyccess} alt="eazy access" width={65} className="lg:w-20" />
             <p
               style={{ fontFamily: 'Sarabun, sans-serif' }}
               className="text-[#0D4C92] uppercase font-extrabold text-center lg:text-base text-sm w-44 lg:mt-3 mt-2 p-2"
@@ -71,7 +71,7 @@ const specialiy = () => {
             variants={fadeIn('up', 'tween', 0.8, 0.6)}
             className="flex flex-col items-center m-10 cursor-pointer"
           >
-            <Image src={Clover} width={65} className="lg:w-20" />
+            <Image src={Clover} alt="free" width={65} className="lg:w-20" />
             <p
               style={{ fontFamily: 'Sarabun, sans-serif' }}
               className="text-[#0D4C92] uppercase font-bold text-center lg:text-base text-sm w-44 lg:mt-3 mt-2  p-2"
@@ -83,7 +83,7 @@ const specialiy = () => {
             variants={fadeIn('up', 'tween', 1, 0.6)}
             className="flex flex-col items-center m-10 cursor-pointer"
           >
-            <Image src={OpenSource} width={65} className="lg:w-20" />
+            <Image src={OpenSource} alt="open source" width={65} className="lg:w-20" />
             <p
               style={{ fontFamily: 'Sarabun, sans-serif' }}
               className="text-[#0D4C92] uppercase text-center font-bold lg:text-base text-sm w-44  p-2"

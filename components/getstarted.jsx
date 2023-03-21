@@ -38,7 +38,7 @@ const getstarted = () => {
               className="bg-[#122D42] hover:bg-[#04273a] rounded-full duration-500"
             >
               <p className="text-white uppercase font-semibold tracking-wide text-sm lg:text-base hover:text-[#3deba2] py-1 px-5 duration-500">
-                Let's get started
+                Let&apos;s get started
               </p>
             </button>
           </Link>

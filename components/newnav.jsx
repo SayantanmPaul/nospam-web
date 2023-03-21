@@ -34,12 +34,13 @@ const NewNavbar = () => {
 
         {/* desktop view */}
         <div className="lg:flex hidden gap-6 ml-auto ">
-          <a
-            href="/"
-            className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal  duration-300`}
-          >
-            Home
-          </a>
+          <Link href={'/'}>
+            <p
+              className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal  duration-300`}
+            >
+              Home
+            </p>
+          </Link>
           <Link rel="preload" href={'/documentation'} as="About">
             <p
               className={`${FontStyles.text} text-[#00AA95] text-[20px] leading-5 font-normal hover:text-[#2D7D90] tracking-normal duration-300`}

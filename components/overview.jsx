@@ -27,10 +27,10 @@ const Overview = () => {
             className=" lg:text-2xl md:text-xl text-base leading-10  text-[#003049] antialiased text-justify "
           >
             The project NoSpam aims to develop a machine learning algorithm that can accurately classify comments on
-            YouTube videos as either spam or legitimate, based on various features such as the text content, the user's
-            history, and the frequency of the comment. By identifying and filtering out spam comments, the project seeks
-            to improve the user experience for viewers and creators on the platform, reduce the amount of unwanted
-            content, and mitigate the negative effects of spam such as phishing attempts, scams, and malware.
+            YouTube videos as either spam or legitimate, based on various features such as the text content, the
+            user&aposs history, and the frequency of the comment. By identifying and filtering out spam comments, the
+            project seeks to improve the user experience for viewers and creators on the platform, reduce the amount of
+            unwanted content, and mitigate the negative effects of spam such as phishing attempts, scams, and malware.
           </p>
           <ReadExtra>
             Over 2.5 billion people access Youtube once a month and has 50 million subscribers according to 2021 survey.
