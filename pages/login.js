@@ -38,7 +38,7 @@ const Login = () => {
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/api/auth/callback/google' });
+    signIn('google', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/workspace' });
   }
 
   // github login function
