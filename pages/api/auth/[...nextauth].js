@@ -16,10 +16,6 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  callbacks: {
-    async signIn(user, account, profile) {
-      return '/workspace';
-    },
-  },
+
   secret: process.env.JWT_SECRET,
 });
