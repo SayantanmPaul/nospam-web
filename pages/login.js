@@ -38,12 +38,12 @@ const Login = () => {
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/workspace/' });
+    signIn('google', { callbackUrl: 'http://localhost:3000/workspace/' });
   }
 
   // github login function
   async function handleGithubSignIn() {
-    signIn('github', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/workspace/' });
+    signIn('github', { callbackUrl: 'http://localhost:3000/workspace/' });
   }
 
   return (
