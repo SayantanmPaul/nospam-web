@@ -14,12 +14,12 @@ const Documentation = () => {
       exit={{ opacity: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 3 }}
-      className={`${Styles.pxpadding} lg:px-28 px-6 pt-5`}
+      className=" lg:px-28 px-6 pt-5 "
     >
       <AboutNav />
       <div className=" flex flex-col items-center justify-center lg:pt-5 pt-4 ">
         {/* in green box */}
-        <div className=" relative greenbox w-[100%] h-auto  rounded-lg bg-gradient-to-br from-[#80FFDB]  to-[#2D7D90] max-w-[1240px] overflow-hidden ">
+        <div className=" relative greenbox  h-auto  rounded-lg bg-gradient-to-br from-[#80FFDB]  to-[#2D7D90] max-w-[1280px] overflow-hidden ">
           <div className=" lg:p-10 md:p-8 p-4 flex flex-col lg:gap-7 gap-4 ">
             <Image
               src={BgAbout}
@@ -41,7 +41,7 @@ const Documentation = () => {
                   className="lg:p-10 lg:py-5 md:py-5 py-3"
                 >
                   <TypingText
-                    title={'Thanks to this awesome team behind the sense to make possible this project'}
+                    title={'Thanks to this awesome team behind the seen to make possible this project'}
                     textStyles="text-center"
                   />
                 </motion.div>
@@ -50,10 +50,9 @@ const Documentation = () => {
           </div>
         </div>
         {/* footer section */}
-        <div className={`${Styles.pxpadding} lg:px-28 px-6 `}>
-          <div className=" bg-[#122D42] mt-5 p-2 w-screen">
-            <NewFooter />
-          </div>
+
+        <div className=" bg-[#122D42] mt-5 p-2 w-screen">
+          <NewFooter />
         </div>
       </div>
     </motion.div>
