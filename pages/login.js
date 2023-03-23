@@ -38,12 +38,12 @@ const Login = () => {
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'https://nospam.webprojects.live/workspace' });
+    signIn('google', { callbackUrl: 'https://nospam.webprojects.live/workspace/' });
   }
 
   // github login function
   async function handleGithubSignIn() {
-    signIn('github', { callbackUrl: 'https://nospam.webprojects.live/workspace' });
+    signIn('github', { callbackUrl: 'https://nospam.webprojects.live/workspace/' });
   }
 
   return (
