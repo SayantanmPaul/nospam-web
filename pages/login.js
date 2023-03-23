@@ -38,12 +38,12 @@ const Login = () => {
 
   // google handler function
   async function handleGoogleSignIn() {
-    signIn('google', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/workspace' });
+    signIn('google', { callbackUrl: 'https://nospam.webprojects.live/workspace' });
   }
 
   // github login function
   async function handleGithubSignIn() {
-    signIn('github', { callbackUrl: 'https://main.d10bi3vg38gvc0.amplifyapp.com/api/auth/callback/github' });
+    signIn('github', { callbackUrl: 'https://nospam.webprojects.live/workspace' });
   }
 
   return (
@@ -61,8 +61,9 @@ const Login = () => {
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-3 ">
           {/* email input section */}
           <div
-            className={`${styles.input_group} ${formik.errors.email && formik.touched.email ? 'border-rose-400' : ''
-              } flex border rounded-xl relative`}
+            className={`${styles.input_group} ${
+              formik.errors.email && formik.touched.email ? 'border-rose-400' : ''
+            } flex border rounded-xl relative`}
           >
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -88,8 +89,9 @@ const Login = () => {
 
           {/* password input section */}
           <div
-            className={`${styles.input_group} ${formik.errors.password && formik.touched.password ? 'border-rose-400' : ''
-              } flex border rounded-xl relative`}
+            className={`${styles.input_group} ${
+              formik.errors.password && formik.touched.password ? 'border-rose-400' : ''
+            } flex border rounded-xl relative`}
           >
             <input
               style={{ fontFamily: 'Poppins, sans-serif' }}
