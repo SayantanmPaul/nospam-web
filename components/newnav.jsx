@@ -26,7 +26,7 @@ const NewNavbar = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: 'true' }}
-        className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] "
+        className=" flex flex-row justify-between  items-center mx-auto 2xl:max-w-[1240px] z-20 "
       >
         <button className=" object-contain h-auto w-40 ">
           <Image src={Logo} alt="Logo" width={149} />

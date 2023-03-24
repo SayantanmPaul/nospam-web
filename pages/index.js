@@ -21,7 +21,7 @@ const Index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 4 }} className="">
-        <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5 `}>
+        <div className={`${Styles.pxpadding} lg:px-28 px-6 pt-5 z-20 `}>
           <NewNavbar />
         </div>
         <div
@@ -42,7 +42,7 @@ const Index = () => {
           <div className="mt-20 lg:mb-10 mb-5 flex flex-col items-center">
             <Specialiy />
           </div>
-          <div className=" flex flex-col items-center">
+          <div className=" flex flex-col items-center  z-10">
             <Getstarted />
           </div>
         </div>
@@ -56,6 +56,7 @@ const Index = () => {
               alt="background"
               layout="fill"
               objectFit="cover"
+              objectPosition="center"
               quality={100}
               className=" absolute object-center z-0 opacity-10"
             />

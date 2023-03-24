@@ -31,7 +31,10 @@ const Workspace = () => {
             <Disclosure.Button className="absolute right-0 inline-flex items-center peer justify-center rounded-md p-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-white group">
               <div className=" lg:hidden  w-screen flex flex-row justify-between items-center px-[3%] ">
                 <Image src={Logo} alt="nospam" width={130} className="pl-[3%] md:pl-[6%]" />
-                <CgMenuRight className="block lg:hidden h-6 w-6 md:mr-[3%] " aria-hidden="true" />
+                <CgMenuRight
+                  className="block lg:hidden h-6 w-6 md:mr-[3%] text-[#256D85] focus:text-[#122D42] "
+                  aria-hidden="true"
+                />
               </div>
             </Disclosure.Button>
 

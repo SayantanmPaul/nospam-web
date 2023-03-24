@@ -8,7 +8,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
     <SessionProvider session={pageProps.session}>
       <SSRProvider>
         {
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence mode="wait">
             <NextUIProvider>
               <Component {...pageProps} />
             </NextUIProvider>
