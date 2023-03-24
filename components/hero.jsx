@@ -29,7 +29,7 @@ const hero = () => {
             style={{ fontFamily: 'Roboto' }}
             className="font-medium lg:text-lg md:text-lg text-sm leading-6  text-[#00AA95]"
           >
-            A project designed to detection of spam comments by quickly and accurately identifying irrelevant,
+            A project designed for detection of spam comments by quickly and accurately identifying irrelevant,
             inappropriate, and promotional messages.
           </motion.p>
           <Link rel="preload" href={'./login'} as="Login">
