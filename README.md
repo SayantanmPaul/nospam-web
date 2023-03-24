@@ -1,20 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![front logo](https://user-images.githubusercontent.com/103353878/227656802-6af14ca1-87c4-419d-9d7c-f8f6e42c65e4.png)
 
-## Getting Started
 
-First, run the development server:
+## NoSpam: Youtube comment spam detection project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Checkout the project: https://nospamdemo.webprojects.live/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Purpose:
+
+The main purpose of the project is to identify and categorize unwanted, unsolicited comments sent in bulk which are commonly known as spam. It detects  whether a comment is spam or ham posted  on the most used and popular platform youtube.
+
+Over 2.5 billion people access Youtube once a month and has 50 million subscribers according to 2021 survey. Thus the audience of youtube spam detection can be may  be youtube content creators, youtube viewers, youtube advertisers, platform administrators.Over 2.5 billion people access Youtube once a month and has 50 million subscribers according to 2021 survey. Thus the audience of youtube spam detection can be may  be youtube content creators, youtube viewers, youtube advertisers, platform administrators.
+
+### Project features:
+
+*	Highly predictive datasets crucial for effective and accurate decision making
+*	
+*	Free access for everyone
+*	Designed as an Open source project  
+* Completely responsive accessable from the vast majority of screen devices
+
+## Frontend UI & pages:
+
+![sp1](https://user-images.githubusercontent.com/103353878/227650381-0a04af3b-3fbe-4d76-b68b-1dd70f29eab2.PNG)
+
+* ### Login & Regitration page
+
+![Capture](https://user-images.githubusercontent.com/103353878/227655460-72f2b4cd-aa23-4b7f-be0b-90d49fbfd2a0.PNG)
+
+users have to either register themselves or log in using their Google/GitHub credentials to access the to main workspace
+
+
+
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
