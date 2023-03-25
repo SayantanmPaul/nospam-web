@@ -20,8 +20,6 @@ const Workspace = () => {
     setnav(!nav);
   };
 
-  const flaskappUrl = process.env.IFRAME_URL;
-
   if (status === 'authenticated') {
     return (
       <>
@@ -230,7 +228,7 @@ const Workspace = () => {
               </div>
             </div>
             <iframe
-              src={flaskappUrl}
+              src="https://flaskspamdemo.webprojects.live/webview/"
               title="webview"
               className=" h-screen w-full pt-10 lg:pt-0 lg:m-2  "
               sandbox=" allow-same-origin allow-forms"
