@@ -17,8 +17,7 @@ Over 2.5 billion people access Youtube once a month and has 50 million subscribe
 ### Project features:
 
 *	Highly predictive datasets crucial for effective and accurate decision making
-*	
-*	Free access for everyone
+*	Free for everyone
 *	Designed as an Open source project  
 * Completely responsive accessable from the vast majority of screen devices
 
@@ -34,7 +33,7 @@ users have to either register themselves or log in using their Google/GitHub cre
 
 * ### Main WorkSpace
 
-  - The user will see this page after successfully logging in
+- The user will see this page after successfully logging in
 
 ![Capture](https://user-images.githubusercontent.com/103353878/227705279-552295a6-28f8-467c-9141-bbf9c8f913ea.PNG)
 
