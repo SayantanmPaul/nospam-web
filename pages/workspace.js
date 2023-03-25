@@ -233,7 +233,7 @@ const Workspace = () => {
               src={flaskappUrl}
               title="webview"
               className=" h-screen w-full pt-10 lg:pt-0 lg:m-2  "
-              sandbox="allow-scripts allow-same-origin allow-forms"
+              sandbox=" allow-same-origin allow-forms"
               seamless
             ></iframe>
           </div>
