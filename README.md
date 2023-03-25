@@ -5,6 +5,8 @@
 
 Checkout the project: https://nospamdemo.webprojects.live/
 
+### root link: https://main.d10bi3vg38gvc0.amplifyapp.com/
+
 
 ### Purpose:
 
@@ -15,8 +17,7 @@ Over 2.5 billion people access Youtube once a month and has 50 million subscribe
 ### Project features:
 
 *	Highly predictive datasets crucial for effective and accurate decision making
-*	
-*	Free access for everyone
+*	Free for everyone
 *	Designed as an Open source project  
 * Completely responsive accessable from the vast majority of screen devices
 
@@ -30,10 +31,76 @@ Over 2.5 billion people access Youtube once a month and has 50 million subscribe
 
 users have to either register themselves or log in using their Google/GitHub credentials to access the to main workspace
 
+* ### Main WorkSpace
+
+- The user will see this page after successfully logging in
+
+![Capture](https://user-images.githubusercontent.com/103353878/227705279-552295a6-28f8-467c-9141-bbf9c8f913ea.PNG)
+
+   - Users can view their credential data on the left panel
+
+![a2](https://user-images.githubusercontent.com/103353878/227705419-c191185f-9bf0-42f6-996d-42a36f8bae49.PNG)
+  
+  - Users have to write/paste the comment to verify that's a spam or not
+
+![image](https://user-images.githubusercontent.com/103353878/227705757-84caa3f9-c866-4feb-82b6-facca3617bdb.png)
+
+  - By pressing the `Predict` button, the results will show whether the given text is a spam comment or not
+  
+  - And don't forget to push the refresh button before giving another input 
+  
+![Capture](https://user-images.githubusercontent.com/103353878/227705828-ac409c3a-9a3e-4283-9325-5c5d7cbd2e63.PNG)
 
 
+## Tools and Services:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+#### - Python Libraries (ML model):
+
+ - `Flask`
+ - `NumPy`
+ - `Pandas`
+ - `Scikit-Learn`
+ 
+#### - Frontend Screens:
+ - `Figma` ->> UI design [click here](https://www.figma.com/file/V1lKivkZNzdv1dsqenkt6g/NoSpam.?node-id=13%3A99&t=F76R8h3CK84ar0n1-1)
+ - `NextJs13 with TailwindCss` ->> Frontend and UI styling
+ - `Framer-Motion` ->> Element and screen animation
+ - `NextAuthJs` ->> User authentication
+ - `Formik Hooks` ->> State management
+ 
+#### - Hosting Service:
+
+ - `Aws Amplify & Elastic Beanstalk` ->> Hosting the project
+ - `Name.com` ->> Custom domain name
+
+## - If you made it out here, do give the project a star; we will be grateful :stars:
+
+## - Project Contributors
+
++ [Avani Sethia](https://www.linkedin.com/in/avani-sethia-84b64621b) 
++ [Deblina Banerjee](https://www.linkedin.com/in/deblina-banerjee-231290206)
++ [Durgesh Gupta](https://www.linkedin.com/in/durgesh-gupta-66017811a/)
++ [Shreya Dubey](https://www.linkedin.com/in/shreya-dubey-a03b2a232/)
++ [Tanisha Gupta](https://www.linkedin.com/in/tanisha-gupta-a81158210)
++ [Sayantan Paul](https://www.linkedin.com/in/imsayantanpaul/)
+
+#### :warning: The project is currently in development stage; additional interesting features will be added soon 
+
+ ## Getting Started With Your Local System
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
