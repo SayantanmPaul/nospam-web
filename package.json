@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.13",
     "@next/font": "13.1.6",
     "@nextui-org/react": "^1.0.0-beta.12",
+    "axios": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "embla-carousel-react": "^7.0.9",
     "eslint": "8.34.0",
