@@ -19,11 +19,15 @@ export default function Flask() {
         }
     }
 
+    // to refresh to the main model
+
     const handleRefresh = () => {
         setComment('');
         setPrediction('');
     }
 
+    // clear result while theres no data input and changeing the previous input
+    
     const handleInputChange = (e) => {
         setComment(e.target.value);
         setPrediction('');
@@ -31,7 +35,7 @@ export default function Flask() {
 
 
     return (
-        <div className="relative flex items-center justify-center lg:pt-5 pt-4">
+        <div className="flex items-center justify-center lg:pt-5 pt-4">
             <div className="greenbox md:mx-6 mx-4 w-[100%] h-screen  rounded-lg bg-[#80FFDB]">
                 <div className="flex flex-col lg:px-12 px-4 lg:pt-12 md:pt-8 pt-4 lg:gap-5 gap-2 ">
                     <div className="flex flex-row">

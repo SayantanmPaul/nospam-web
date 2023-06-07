@@ -13,12 +13,12 @@ import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
 import { MdSentimentVerySatisfied} from 'react-icons/md'
 import { motion } from 'framer-motion';
-import Flask from './flaskapp';
 import Homebar from './features/homepage';
 import Link from 'next/link';
-import SpamDetect from './spamdetect';
+import Speech from './features/speech';
 
-const Workspace = () => {
+
+const SpeechDetection = () => {
   const { data: session, status } = useSession();
   const [nav, setnav] = useState(false);
   const handleNav = () => {
@@ -44,7 +44,7 @@ const Workspace = () => {
             </Disclosure.Button>
 
             <div className="p-6 w-3/5 md:w-1/3 h-full bg-gradient-to-r from-[#4CACBC] to-[#488FB1] z-20 fixed top-0 -left-96 lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-in-out delay-150 duration-500 " style={{backgroundImage: bgimage }}>
-              <div className="flex flex-col justify-start items-center">
+              <div className="flex flex-col justify-start  items-center">
                 <Image src={Logo} alt="nospam" width={130} />
                 <div className="my-4 border-b border-gray-100 pb-4">
                   <div className=" flex justify-start flex-col items-center w-full ">
@@ -88,13 +88,13 @@ const Workspace = () => {
                   </div>
                 </div>
                 <div className="">
-                  <Link href={''}>
+                  <Link href={'./workspace'}>
                     <div
                       style={{ fontFamily: 'Sarabun, sans-serif' }}
-                      className="flex mb-2 justify-start items-center gap-4 bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                      className="flex mb-2 justify-start items-center gap-4 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
                     >
-                      <BiHomeAlt className="text-lg text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-white font-bold tracking-normal">Main Menu</h3>
+                      <BiHomeAlt className="text-lg text-gray-900 group-hover:text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-gray-800 group-hover:text-white font-bold tracking-normal">Main Menu</h3>
                     </div>
                   </Link>
                   <Link href={'./spamdetect'}>
@@ -115,13 +115,13 @@ const Workspace = () => {
                       <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-gray-800 group-hover:text-white font-bold tracking-normal">Sentiment Analysis</h3>
                     </div>
                   </Link>
-                  <Link href={'./speechdetect'}>
+                  <Link href={''}>
                     <div
                       style={{ fontFamily: 'Sarabun, sans-serif' }}
-                      className="flex mb-2 justify-start items-center gap-4 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                      className="flex mb-2 justify-start items-center gap-4 bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
                     >
-                      <AiOutlineThunderbolt size={25} className="text-lg text-gray-900 group-hover:text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-gray-800 group-hover:text-white font-bold tracking-normal">Speech to Text Analysis</h3>
+                      <AiOutlineThunderbolt size={25} className="text-lg text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-white font-bold tracking-normal">Speech to Text Analysis</h3>
                     </div>
                   </Link>
                   <Link href={'https://github.com/SayantanmPaul/nospam-web'}>
@@ -208,13 +208,15 @@ const Workspace = () => {
                     </div>
                   </div>
                   <div className="p-5">
-                    <div
-                      style={{ fontFamily: 'Sarabun, sans-serif' }}
-                      className="flex mb-2  justify-start items-center gap-4  bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                    >
-                      <BiHomeAlt className="text-xl text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-white font-semibold tracking-normal ">Main Menu</h3>
-                    </div>
+                    <Link href={'/workspace'}>
+                      <div
+                        style={{ fontFamily: 'Sarabun, sans-serif' }}
+                        className="flex mb-2  justify-start items-center gap-4  hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                      >
+                        <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
+                        <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-gray-800 group-hover:text-white font-semibold tracking-normal ">Main Menu</h3>
+                      </div>
+                    </Link>
                     <Link href={'./spamdetect'}>
                       <div
                         style={{ fontFamily: 'Sarabun, sans-serif' }}
@@ -233,15 +235,13 @@ const Workspace = () => {
                         <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-gray-800 group-hover:text-white font-bold tracking-normal">Sentiment Analysis</h3>
                       </div>
                     </Link>
-                    <Link href={'./speechdetect'}>
-                        <div
-                        style={{ fontFamily: 'Sarabun, sans-serif' }}
-                        className="flex mb-2 justify-start items-center gap-4  hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                        >
-                        <AiOutlineThunderbolt size={25} className="text-xl text-gray-900 group-hover:text-white " />
-                        <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-gray-800 group-hover:text-white font-bold tracking-normal">Speech to Text Analysis</h3>
-                        </div>
-                    </Link>
+                    <div
+                      style={{ fontFamily: 'Sarabun, sans-serif' }}
+                      className="flex mb-2 justify-start items-center gap-4 bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                    >
+                      <AiOutlineThunderbolt size={25} className="text-xl text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base  text-white font-bold tracking-normal">Speech to Text Analysis</h3>
+                    </div>
                     <Link href={'https://github.com/SayantanmPaul/nospam-web'}>
                       <div
                         style={{ fontFamily: 'Sarabun, sans-serif' }}
@@ -273,7 +273,7 @@ const Workspace = () => {
               </div>
             </div>
             <div className='w-full '>  
-            <Homebar />
+            <Speech />
             </div>
           </div>
         </motion.div>
@@ -291,7 +291,21 @@ const Workspace = () => {
     );
   }
 };
-export default Workspace;
+export default SpeechDetection;
 
 // protected route
 
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+};

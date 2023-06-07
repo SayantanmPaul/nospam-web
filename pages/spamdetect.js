@@ -13,12 +13,10 @@ import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
 import { MdSentimentVerySatisfied} from 'react-icons/md'
 import { motion } from 'framer-motion';
-import Flask from './flaskapp';
-import Homebar from './features/homepage';
 import Link from 'next/link';
-import SpamDetect from './spamdetect';
+import Flask from './flaskapp';
 
-const Workspace = () => {
+const SpamDetect = () => {
   const { data: session, status } = useSession();
   const [nav, setnav] = useState(false);
   const handleNav = () => {
@@ -88,22 +86,22 @@ const Workspace = () => {
                   </div>
                 </div>
                 <div className="">
+                  <Link href={'./workspace'}>
+                    <div
+                      style={{ fontFamily: 'Sarabun, sans-serif' }}
+                      className="flex mb-2 justify-start items-center gap-4 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                    >
+                      <BiHomeAlt className="text-lg text-gray-900 group-hover:text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-gray-800 group-hover:text-white font-bold tracking-normal">Main Menu</h3>
+                    </div>
+                  </Link>
                   <Link href={''}>
                     <div
                       style={{ fontFamily: 'Sarabun, sans-serif' }}
                       className="flex mb-2 justify-start items-center gap-4 bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
                     >
-                      <BiHomeAlt className="text-lg text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-white font-bold tracking-normal">Main Menu</h3>
-                    </div>
-                  </Link>
-                  <Link href={'./spamdetect'}>
-                    <div
-                      style={{ fontFamily: 'Sarabun, sans-serif' }}
-                      className="flex mb-2 justify-start items-center gap-4 hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                    >
-                      <AiOutlineCoffee className="text-lg text-gray-900 group-hover:text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-gray-800 group-hover:text-white font-bold tracking-normal">Spam Detection</h3>
+                      <AiOutlineCoffee className="text-lg text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-sm text-white font-bold tracking-normal">Spam Detection</h3>
                     </div>
                   </Link>
                   <Link href={'./sentimentdetect'}>
@@ -208,22 +206,22 @@ const Workspace = () => {
                     </div>
                   </div>
                   <div className="p-5">
-                    <div
-                      style={{ fontFamily: 'Sarabun, sans-serif' }}
-                      className="flex mb-2  justify-start items-center gap-4  bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
-                    >
-                      <BiHomeAlt className="text-xl text-white " />
-                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-white font-semibold tracking-normal ">Main Menu</h3>
-                    </div>
-                    <Link href={'./spamdetect'}>
+                    <Link href={'/workspace'}>
                       <div
                         style={{ fontFamily: 'Sarabun, sans-serif' }}
-                        className="flex mb-2 justify-start items-center gap-4  hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                        className="flex mb-2  justify-start items-center gap-4  hover:bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
                       >
-                        <AiOutlineCoffee size={23} className="text-xl text-gray-900 group-hover:text-white " />
-                        <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-gray-800 group-hover:text-white font-bold  tracking-normal">Spam Detection</h3>
+                        <BiHomeAlt className="text-xl text-gray-900 group-hover:text-white " />
+                        <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-gray-800 group-hover:text-white font-semibold tracking-normal ">Main Menu</h3>
                       </div>
                     </Link>
+                    <div
+                      style={{ fontFamily: 'Sarabun, sans-serif' }}
+                      className="flex mb-2 justify-start items-center gap-4  bg-gray-800 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto duration-200"
+                    >
+                      <AiOutlineCoffee size={23} className="text-xl text-white " />
+                      <h3 style={{fontFamily:'Poppins, sans-serif'}} className="text-base text-white font-bold  tracking-normal">Spam Detection</h3>
+                    </div>
                     <Link href={'./sentimentdetect'}>
                       <div
                         style={{ fontFamily: 'Sarabun, sans-serif' }}
@@ -273,7 +271,7 @@ const Workspace = () => {
               </div>
             </div>
             <div className='w-full '>  
-            <Homebar />
+            <Flask />
             </div>
           </div>
         </motion.div>
@@ -291,7 +289,7 @@ const Workspace = () => {
     );
   }
 };
-export default Workspace;
+export default SpamDetect;
 
 // protected route
 
