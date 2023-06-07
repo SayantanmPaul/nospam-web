@@ -11,6 +11,7 @@ import { AiOutlineCoffee } from 'react-icons/ai';
 import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
 import { motion } from 'framer-motion';
+import Flask from './flaskapp';
 import Link from 'next/link';
 
 const Workspace = () => {
@@ -227,13 +228,9 @@ const Workspace = () => {
                 </div>
               </div>
             </div>
-            <iframe
-              src="https://flaskspamdemo.webprojects.live/webview/"
-              title="webview"
-              className=" h-screen w-full pt-10 lg:pt-0 lg:m-2  "
-              sandbox=" allow-same-origin allow-forms"
-              seamless
-            ></iframe>
+            <div className='w-full lg:pt-0 pt-10'>  
+            <Flask />
+            </div>
           </div>
         </motion.div>
       </>
