@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Recorder } from "react-voice-recorder";
 import "react-voice-recorder/dist/index.css";
-import { Comment } from  'react-loader-spinner';
+import Status from "../statuscheck/status";
 import axios from "axios";
+import Result from "../sentimenttest/result";
 
 // fetching the api key from Assemblyai
 const assemblyApi = axios.create({
@@ -64,6 +65,8 @@ export default function Speech() {
   // uploading audio file vvia post send post request to the api
   const handleAudioUpload = async (audioFile) => {
     try {
+      setIsLoading(true);
+
       const { data: uploadResponse } = await assemblyApi.post('/upload', audioFile);
   
       const { data } = await assemblyApi.post('/transcript', {
@@ -95,19 +98,17 @@ export default function Speech() {
       console.error(err);
     }
   };
-  
+
   // frontend
   return (
     <div className="lg:p-14 p-4">
       <h1 className="text-2xl font-bold mb-4">This is Speech and Text Detection Menu</h1>
   
       {transcript.status === 'completed' ? (
-        <p>{transcript.text}</p>
-      ) : (
-        <div className="flex items-center justify-center">
-          <Comment visible={true} height={40} width={40} ariaLabel="comment-loading" wrapperStyle={{}} color="#fff" backgroundColor="#57CC99"/>
-        </div>
-      )}
+        <p style={{fontFamily:'Poppins, sans-serif'}}>
+          <Result transcript={transcript}/>
+        </p>
+      ) : <Status isLoading={isLoading} status={transcript.status}/>}
 
       <Recorder
         record={true}
