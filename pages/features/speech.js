@@ -4,6 +4,8 @@ import "react-voice-recorder/dist/index.css";
 import Status from "../statuscheck/status";
 import axios from "axios";
 import Result from "../sentimenttest/result";
+import Icon from '../../public/ai.svg';
+import Image from "next/image";
 
 // fetching the api key from Assemblyai
 const assemblyApi = axios.create({
@@ -101,22 +103,38 @@ export default function Speech() {
 
   // frontend
   return (
-    <div className="lg:p-14 p-4">
-      <h1 className="text-2xl font-bold mb-4">This is Speech and Text Detection Menu</h1>
+    <div className="lg:p-14 p-4 flex flex-col h-screen gap-5">
+      <h1  style={{fontFamily:'Poppins, sans-serif'}} className="lg:text-3xl text-2xl font-bold  text-[#256D85] tracking-normal">
+        Speech to Text Analysis
+      </h1>
+      <div className="bg-[#80FFDB] rounded flex justify-center items-center p-4 sm:p-6 md:p-8">
+        {transcript.status === 'completed' ? (
+          <p className="font-poppins">
+            <Result transcript={transcript} />
+          </p>
+        ) : (
+          <Status isLoading={isLoading} status={transcript.status} />
+        )}
+      </div>
   
-      {transcript.status === 'completed' ? (
-        <p style={{fontFamily:'Poppins, sans-serif'}}>
-          <Result transcript={transcript}/>
-        </p>
-      ) : <Status isLoading={isLoading} status={transcript.status}/>}
-
-      <Recorder
-        record={true}
-        audioURL={audioDetails.url}
-        handleAudioStop={handleAudioStop}
-        handleAudioUpload={handleAudioUpload}
-        handleReset={handleReset}
-      />
+      <div className="greenbox relative flex-1 px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 rounded-lg bg-[#80FFDB]">
+        <p style={{fontFamily:'Poppins, sans-serif'}} className=" font-bold text-md tracking-normal text-[#256D85] text-center hover:underline duration-300" >Record audioclip</p>
+        <Recorder
+          record={true}
+          audioURL={audioDetails.url}
+          handleAudioStop={handleAudioStop}
+          handleAudioUpload={handleAudioUpload}
+          handleReset={handleReset}
+        />
+        <div className=" lg:block hidden absolute right-6 bottom-5 justify-center ">
+          <div className=" flex flex-row gap-2 items-center">
+            <p style={{fontFamily:'Poppins, sans-serif'}} className=" font-bold text-xs">Powered by</p>
+            <Image className=" inline-block bg-black p-1 rounded" src={Icon} width={90} alt="ai" height={20} />
+            
+          </div>
+      </div>
+      </div>
     </div>
-  );
+  );        
+  
 }
