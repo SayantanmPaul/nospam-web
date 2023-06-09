@@ -4,7 +4,7 @@ export default async function handler(req,res){
     if(req.method== 'POST'){
         const {comment}=req.body;
         try{
-            const response=await axios.post('http://localhost:5000/webview/predict',{
+            const response=await axios.post('http://spam.ap-south-1.elasticbeanstalk.com//webview/predict',{
                 comment
             });
             res.status(200).json(response.data);

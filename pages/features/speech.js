@@ -72,6 +72,8 @@ export default function Speech() {
       const { data: uploadResponse } = await assemblyApi.post('/upload', audioFile);
   
       const { data } = await assemblyApi.post('/transcript', {
+
+        //features access
         audio_url: uploadResponse.upload_url,
         sentiment_analysis: true,
         entity_detection: true,
