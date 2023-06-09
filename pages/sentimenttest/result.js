@@ -3,6 +3,10 @@ import Highlighte from './highlighte';
 import Topics from './topics';
 
 export default function Result({ transcript }) {
+  if (!transcript || !transcript.sentiment_analysis_results) {
+    return null; 
+  }
+
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="flex flex-wrap justify-center">

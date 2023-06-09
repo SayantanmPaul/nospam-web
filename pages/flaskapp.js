@@ -97,7 +97,7 @@ export default function Flask() {
                       </p>
                     ) : (
                       <p className="lg:text-2xl md:text-xl text-indigo-700 font-black tracking-normal lg:block md:block" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                        It's not a spam comment
+                        It&apos;s not a spam comment
                       </p>
                     )}
                   </div>
