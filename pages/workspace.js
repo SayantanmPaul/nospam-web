@@ -13,12 +13,14 @@ import { FiHelpCircle } from 'react-icons/fi';
 import { BiHomeAlt, BiLogOut, BiGitBranch } from 'react-icons/bi';
 import { MdSentimentVerySatisfied} from 'react-icons/md'
 import { motion } from 'framer-motion';
-import Flask from './flaskapp';
 import Homebar from './features/homepage';
 import Link from 'next/link';
-import SpamDetect from './spamdetect';
+import { InfinitySpin } from 'react-loader-spinner';
 
 const Workspace = () => {
+
+
+
   const { data: session, status } = useSession();
   const [nav, setnav] = useState(false);
   const handleNav = () => {
@@ -29,8 +31,9 @@ const Workspace = () => {
     return (
       <>
         <Head>
-          <title>Session active</title>
+          <title>NoSpam</title>
         </Head>
+
         <motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 5 }}>
           <Disclosure as="nav" className="block lg:hidden">
             <Disclosure.Button className=" right-0  items-center peer justify-center rounded-md pl-4 pt-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-white group">
