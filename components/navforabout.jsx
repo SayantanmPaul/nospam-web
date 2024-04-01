@@ -165,7 +165,7 @@ const AboutNav = () => {
               </div>
 
               <div className=" fixed  bottom-0 pb-5">
-                <Link rel="preload" href={'./login'} as="Login">
+                <Link rel="preload" href={'./login'} as="login">
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 border border-gray-800  hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer ">
                     <BiLogIn className=" text-2xl text-gray-800 group-hover:text-green-600" />
                     <h3

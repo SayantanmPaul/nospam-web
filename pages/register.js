@@ -155,7 +155,7 @@ const Register = () => {
           <p style={{ fontFamily: 'Poppins, sans-serif' }} className="text-cener text-gray-400 text-xs ">
             already have a account?
           </p>
-          <Link href={'/login'} as="LogIn">
+          <Link href={'/login'} as="logIn">
             <p style={{ fontFamily: 'Poppins, sans-serif' }} className=" text-blue-700 underline text-xs">
               Log In
             </p>

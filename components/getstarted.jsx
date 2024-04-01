@@ -32,7 +32,7 @@ const getstarted = () => {
           </motion.h2>
         </div>
         <motion.div variants={textVariant(0.8)} className="lg:py-9 py-6 mb-3 z-10">
-          <Link rel="preload" href={'/login'} as="Login">
+          <Link rel="preload" href={'/login'} as="login">
             <button
               style={{ fontFamily: 'Sarabun, sans-serif' }}
               className="bg-[#122D42] hover:bg-[#04273a] rounded-full duration-500"

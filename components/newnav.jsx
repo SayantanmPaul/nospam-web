@@ -61,7 +61,7 @@ const NewNavbar = () => {
               Contact Us
             </p>
           </ScrollLink>
-          <Link rel="preload" href={'/login'} as="Login">
+          <Link rel="preload" href={'/login'} as="login">
             <button>
               <p
                 className={`${FontStyles.logintext} bg-[#256D85] text-[20px] leading-5 font-normal text-white tracking-tight hover:bg-[#003049] py-2 pt-1 px-6 rounded-3xl duration-300 `}
@@ -172,7 +172,7 @@ const NewNavbar = () => {
               </div>
 
               <div className=" fixed  bottom-0 pb-5">
-                <Link rel="preload" href={'./login'} as="Login">
+                <Link rel="preload" href={'./login'} as="login">
                   <div className="flex mb-2 justify-start items-center gap-4 px-5 border border-gray-800  hover:bg-gray-900 p-2 rounded-md group hover:shadow-lg m-auto duration-200 cursor-pointer ">
                     <BiLogIn className=" text-2xl text-gray-800 group-hover:text-green-600" />
                     <h3
