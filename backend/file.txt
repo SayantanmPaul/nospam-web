@@ -1,1 +1,0 @@
-python detection and necessary files

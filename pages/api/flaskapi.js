@@ -4,7 +4,7 @@ export default async function handler(req,res){
     if(req.method== 'POST'){
         const {comment}=req.body;
         try{
-            const response=await axios.post('https://nospam.onrender.com/webview/predict',{
+            const response=await axios.post('https://nospam-python.onrender.com/webview/predict',{
                 comment
             });
             res.status(200).json(response.data);
